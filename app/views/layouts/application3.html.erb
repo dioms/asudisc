@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>ASU DISC</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="header">
+    <div class="headerContent">
+      <div class="logo">
+        <%= link_to image_tag("asudisc_logo_small.png", :border => 0), root_path %>
+      </div>
+      <%= link_to "Home", root_path %>
+      <%= link_to "Executive Page", "#" %>
+      <%= link_to "About", "#" %>
+      <%= link_to "Jobs", jobs_path %>
+    </div>
+  </div>
+    <div class="container">
+      <% unless defined?(resource).nil? %>
+        <%= devise_error_messages1! unless resource.errors.empty? %>
+      <% end %>
+      <%= content_tag(:p, notice, :class => "alert alert-success") if notice.present? %>
+      <%= content_tag(:p, alert, :class => "alert alert-failure") if alert.present? %>
+
+        <%= yield %>
+    </div> <!-- /container -->
+
+  </body>
+</html>

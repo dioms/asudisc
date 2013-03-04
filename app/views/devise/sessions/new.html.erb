@@ -1,0 +1,13 @@
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-signin"}) do |f| %>
+  <%= content_tag :h2, "Login", :class => "form-signin-heading" %>
+  <%= f.email_field :email, :autofocus => true, :class => "input-block-level", :placeholder => "ASU Email address" %>
+  <%= f.password_field :password, :autofocus => true, :class => "input-block-level", :placeholder => "Password" %>
+  <% if devise_mapping.rememberable? -%>
+    <%= content_tag :label, :class => "checkbox" do %>
+    <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+  <% end %>
+  <% end -%>
+  <div><%= f.submit "Login", :class => "btn btn-large btn-primary" %></div>
+<%= render "devise/shared/links" %>
+<% end %>
+

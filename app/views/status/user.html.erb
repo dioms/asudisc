@@ -1,0 +1,5 @@
+<% @users.each do |u| %>
+  <%= u.id %>. <%= link_to u.email, "#" %> 
+  <%= link_to("Add Admin", "#", :class => "btn btn-primary") unless u.admin %>
+  <br />
+<% end %>

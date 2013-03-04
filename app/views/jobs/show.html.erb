@@ -1,0 +1,31 @@
+<div class="offset1">
+<h1><%= link_to @job.job_title, @job %></h1>
+
+<% if @job.company_url.present? %>
+  <%= link_to @job.company_name, @job.company_url %>
+<% else %>
+  <%= @job.company_name %>
+<% end %>
+
+<%= @job.city %>
+
+<br />
+<br />
+<p>
+<b>Description</b> <br />
+<%= @job.description %>
+</p>
+
+<p>
+<b>Requirements</b> <br />
+<%= @job.requirements %>
+</p>
+
+<% unless @job.company_description.blank? %>
+  <b>Company description:</b>
+  <%= @job.company_description %>
+<% end %>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>
+</div>
