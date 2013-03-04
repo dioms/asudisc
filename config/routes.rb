@@ -1,14 +1,11 @@
 Asudisc::Application.routes.draw do
   resources :events
-
+  resources :jobs
 
   match '/members', :to => 'profile#index'
   match '/profile/:id', :to => 'profile#show'
   match '/about', :to => 'navigation#about'
   match '/executive_team', :to => 'navigation#executive_team'
-
-  resources :jobs
-
 
   devise_for :users
   get "navigation/index"

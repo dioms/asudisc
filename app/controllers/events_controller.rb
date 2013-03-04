@@ -2,7 +2,8 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @published_events = Event.where(status: "Publish")
+    @draft_events = Event.where(status: "Draft")
 
     respond_to do |format|
       format.html # index.html.erb

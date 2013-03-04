@@ -11,4 +11,9 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :email
   validates_format_of :email, :with => /\A([^@\s]+)@((?:asu+\.)+edu)\Z/i, :on => :create, :message => "Must be a valid asu email address"
+
+  def admin?
+    self.admin && user_signed_in?
+  end
+
 end

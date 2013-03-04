@@ -16,23 +16,31 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :date %><br />
+    <%= f.label :category %>
+    <%= select(:event, :event_type, Event::TYPES) %>
+  </div>
+  <div class="field">
+    <%= f.label :status %>
+    <%= select(:event, :status, Event::STATUS) %>
+  </div>
+  <div class="field">
+    <%= f.label :date %>
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :start_time %><br />
-    <%= f.time_select :start_time, {:ampm => true} %>
+    <%= f.label :start_time %>
+    <%= f.time_select :start_time, {:minute_step => 15} %>
   </div>
   <div class="field">
-    <%= f.label :end_time %><br />
-    <%= f.time_select :end_time, {:ampm => true} %>
+    <%= f.label :end_time %>
+    <%= f.time_select :end_time, {:minute_step => 15} %>
   </div>
   <div class="field">
-    <%= f.label :location %><br />
+    <%= f.label :location %>
     <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
   <div class="actions">
