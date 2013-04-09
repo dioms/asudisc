@@ -1,6 +1,7 @@
 <% if user_signed_in? %>
   <li>
-  <%= link_to(current_user.email, profile_path(current_user)) %>
+  <%# link_to(current_user.email, profile_path(current_user)) %>
+  <%= link_to('My Profile', profile_path(current_user)) %>
   </li>
 <% else %>
   <li>
