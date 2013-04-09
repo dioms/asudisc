@@ -1,1 +1,4 @@
-<%= @user.email %>
+<h1>Welcome <%= @user.email %> <%= link_to("Edit", edit_user_registration_path(current_user), :class => "btn btn-primary") if current_user == @user %> </h1>
+<hr>
+<h1>Courses</h1>
+You haven't filled out any courses. <%= link_to "Add", "#" %> a course?

@@ -12,36 +12,8 @@
  *= require_self
  *= require_tree .
  */
-body {
-}
-
-.container.main {
-  width: 1040px; 
-}
-
-.logo {
-  background-image:url("/assets/kindajean.png");
-  width:30%;
-  -webkit-border-radius:10px;
-  padding: 10px;
-}
-
-.header {
-  width:100%;
-  background-color:#ffcb66;
-  margin: 0 auto;
-  padding: 0;
-}
-
-.headerContent {
-  margin: 0 auto;
-  width: 960px;
-  line-height: 100%;
-  padding: 9px;
-}
-
 .container {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .form-signin {
@@ -68,11 +40,4 @@ body {
   height: auto;
   margin-bottom: 15px;
   padding: 7px 9px;
-}
-
-.navigation {
-  height: 76px;
-  width: 960px;
-  margin: 0 auto;
-  position:relative;
 }

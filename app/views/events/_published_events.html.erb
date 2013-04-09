@@ -1,11 +1,9 @@
 <% @published_events.each do |event| %>
-  <h4><%= event.title %></h4>
+  <h4><%= link_to event.title, event %></h4>
   <b>When:</b> <%= time_tag event.date %> <br />
   <b>What time:</b><%= event.start_time.strftime("%I:%M %p") %> -
-    <%= event.end_time.strftime("%I:%M %p") %> <br />
-    <b>Where:</b> <%= event.location %> <br />
-    <b>What:</b> <%= event.description %> <br />
-    <%= link_to 'Show', event %>
-    <%= link_to 'Edit', edit_event_path(event) %>
-    <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= event.end_time.strftime("%I:%M %p") %> <br />
+  <b>Where:</b> <%= event.location %> <br />
+  <b>What:</b> <%= event.description %> <br />
+  <%= render :partial => 'edit_destroy', :locals => { :event => event } if current_user.try(:admin?) %>
 <% end %>

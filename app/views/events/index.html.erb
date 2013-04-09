@@ -1,9 +1,7 @@
 <h1>Events
-  <%= link_to 'New Event', new_event_path, :class => "btn btn-primary" %></h1>
+<%= link_to('New Event', new_event_path, :class => "btn btn-primary") if current_user.try(:admin?) %></h1>
 
 <%= render :partial => 'published_events' %>
-<%= render :partial => 'draft_events' if user_signed_in? && current_user.admin %>
+<%= render :partial => 'draft_events' if current_user.try(:admin?) %>
 
 <br />
-
-<%= link_to 'New Event', new_event_path %>

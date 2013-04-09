@@ -3,7 +3,7 @@ Asudisc::Application.routes.draw do
   resources :jobs
 
   match '/members', :to => 'profile#index'
-  match '/profile/:id', :to => 'profile#show'
+  resources :profile
   match '/about', :to => 'navigation#about'
   match '/executive_team', :to => 'navigation#executive_team'
 
