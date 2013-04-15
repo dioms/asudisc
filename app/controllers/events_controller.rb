@@ -25,6 +25,23 @@ class EventsController < ApplicationController
     end
   end
 
+  def attendance
+    @event = Event.find(params[:id])
+    @user = User.find_by_email(params[:email])
+
+    respond_to do |format|
+      if @user.nil?
+        format.html { redirect_to attend_event_path(@event), notice: 'There was an error submitting your attendance.' }
+      else
+        @user.attend(@event)
+        format.html { redirect_to attend_event_path(@event), notice: 'Your attendance was successfully submitted.' }
+      end
+    end
+  end
+
+  def attend
+  end
+
   # GET /events/new
   # GET /events/new.json
   def new

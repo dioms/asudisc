@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
 
   has_many :course
+  has_and_belongs_to_many :events
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -18,4 +19,8 @@ class User < ActiveRecord::Base
     self.admin
   end
 
+  def attend(event)
+    return false if self.nil?
+    return true if self.events << event
+  end
 end

@@ -1,0 +1,5 @@
+<%= form_tag(controller: "events", action: "attendance", :html => {:class => "form-signin"}) do %>
+  <%= label_tag(:email, "Email:") %>
+  <%= text_field_tag(:email, :class => "input-block-level") %>
+  <%= submit_tag("Submit") %>
+<% end %>

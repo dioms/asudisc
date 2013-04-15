@@ -1,0 +1,5 @@
+<%= form_tag(controller: "events", action: "attendance") do %>
+  <%= label_tag(:email, "Email:") %>
+  <%= text_field_tag(:email) %>
+  <%= submit_tag("Submit") %>
+<% end %>

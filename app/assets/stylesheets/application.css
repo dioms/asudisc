@@ -13,7 +13,6 @@
  *= require_tree .
  */
 .container {
-  padding-top: 10px;
 }
 
 .form-signin {

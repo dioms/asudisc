@@ -173,7 +173,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 22px;
     display: block;
     background-repeat: no-repeat;
-    background-image: url(../assets/sprite_social_2.png);
+    background-image: url(/assets/sprite_social_2.png);
     text-indent: -9000px;
 }
 .block_general_social_1 li a.social_1 {
@@ -260,7 +260,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 22px;
     display: block;
     background-repeat: no-repeat;
-    background-image: url(../assets/sprite_social_3.png);
+    background-image: url(/assets/sprite_social_3.png);
     text-indent: -9000px;
 }
 .block_general_social_2 li a.social_1 {
@@ -336,7 +336,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 9px;
     width: 100%;
     border: 0;
-    background: url(../assets/divider1.png) repeat-x;
+    background: url(/asssets/divider1.png) repeat-x;
 }
 .divider-home {
     margin-bottom: 40px;
@@ -390,7 +390,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 15px;
     padding-right: 15px;
     display: inline-block;
-    background-image: url("../assets/pattern_08.jpg");
+    background-image: url("/assets/pattern_08.jpg");
 }
 .widget a {
     font-weight: 600;
@@ -611,14 +611,14 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 
 /* Header */
 .header {
-    /*border-top: 5px solid rgb(34, 170, 238); */
-    border-top: 5px solid rgb(255, 203, 102);
+/*    border-top: 5px solid rgb(34, 170, 238); */
+    border-top: 5px solid #903;
     background-color: #fff;  
     border-bottom: 1px solid rgb(240, 240, 240);
 }
 .header .navbar .navbar-inner .brand {
-    padding: 15px 0; 
-    margin-left: 0;
+    /*padding: 27px 0;*/
+    /*margin-left: 0;*/
     font-weight: bold;
     font-size: 24px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -635,8 +635,6 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 .header .navbar .nav {
     float: right;
     margin-right: 0;
-    padding-left: 40px;
-    margin: 12px;
 }
 .header .navbar .nav > li > a {
     display: block;
@@ -644,14 +642,12 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
     font-weight: bold;
     padding: 30px 25px;
 }
-/*
-.header .navbar .nav > li:last-child > a {
+/*.header .navbar .nav > li:last-child > a {
     padding-right: 0;
-}
-.header .navbar .nav > li:last-child > a:hover, .header .navbar .nav > li:last-child.active > a {
+}*/
+/*.header .navbar .nav > li:last-child > a:hover, .header .navbar .nav > li:last-child.active > a {
     padding-right: 25px;
-}
-*/
+}*/
 .header .navbar .nav > li > a:focus,
 .header .navbar .nav > li > a:hover {
   background-color: rgb(240, 240, 240);
@@ -902,7 +898,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
     background-color: rgba(215, 51, 0, 0.1);
 } 
 .portfolio-filter {
-    /* margin-bottom: */
+    margin-bottom: 
 }
       
 /* Clients */

@@ -1,5 +1,7 @@
 Asudisc::Application.routes.draw do
   resources :events
+  match '/events/:id/attendance/', :to => 'events#attendance'
+  match '/events/:id/attend/', :to => 'events#attend', :as => :attend_event
   resources :jobs
 
   match '/members', :to => 'profile#index'
