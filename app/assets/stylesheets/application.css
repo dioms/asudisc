@@ -12,10 +12,12 @@
  *= require_self
  *= require_tree .
  */
-.container {
+.content {
+  padding-top: 20px;
 }
 
 .form-signin {
+  margin-top: 10px;
   max-width: 300px;
   padding: 19px 29px 29px;
   margin: 0 auto 20px;

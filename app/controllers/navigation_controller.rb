@@ -1,6 +1,6 @@
 class NavigationController < ApplicationController
   def index
-    @jobs = Job.last(3).reverse
+    @events = Event.last(3).reverse
   end
 
   def jobs
