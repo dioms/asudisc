@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130429214337) do
+ActiveRecord::Schema.define(:version => 20130523015049) do
 
 # Could not dump table "courses" because of following StandardError
 #   Unknown type 'professor' for column 'string'
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20130429214337) do
     t.string   "first_name",             :default => "",    :null => false
     t.string   "last_name",              :default => "",    :null => false
     t.boolean  "has_paid",               :default => false, :null => false
+    t.string   "graduation"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -2,3 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import url(http://fonts.googleapis.com/css?family=Gentium+Book+Basic|Open+Sans);
+
+.about {
+  font: 400 20px/24px "Open Sans";
+  color: #222;
+}

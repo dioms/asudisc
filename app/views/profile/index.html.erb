@@ -1,4 +1,21 @@
-<h1>Users</h1>
-<% @users.each do |u| %>
-  <%= link_to(u.email, profile_path(u)) %> <%= link_to("Make Admin", "#" , :class => "btn btn-primary") unless u.admin || current_user.try(:admin?) %> <br /><br />
-<% end %>
+<h1>Members</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Picture</th>
+      <th>Name</th>
+      <th>Resume</th>
+      <th>Graduation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |u| %>
+      <tr>
+        <td><%= image_tag 'anonymous-icon.jpg' %></td>
+        <td><%= link_to(u.full_name, profile_path(u)) %> </td>
+        <td><%= link_to("Make Admin", "#" , :class => "btn btn-primary") unless u.admin || current_user.try(:admin?) %>NA</td>
+        <td>N/A</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

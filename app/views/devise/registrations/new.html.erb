@@ -7,6 +7,9 @@
   <%= f.text_field :last_name, :class => "input-block-level", :placeholder => "Last Name" %>
   <%= f.password_field :password, :autofocus => true, :class => "input-block-level", :placeholder => "Password" %>
   <%= f.password_field :password_confirmation, :autofocus => true, :class => "input-block-level", :placeholder => "Password Confirmation" %>
+  <!-- calls expected_graduation which is in the application helper in order to populate the list of expected graduation dates.-->
+  <h5>Expected Graduation</h5>
+  <%= select(:user, :graduation, expected_graduation(2014, 2017), {:include_blank => true} ) %>
 
   <div><%= f.submit "Register", :class => "btn btn-large btn-primary" %></div>
 <%= render "devise/shared/links" %>
