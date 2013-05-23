@@ -2,38 +2,47 @@
   <head>
     <title>ASU DISC</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <header class="header">
-    <div class="container">
-      <div class="navbar">
-        <div class="navbar-inner">
-          <div class="brand-wrapper">
-            <%= link_to (image_tag "disc_logo.png"), root_path, :class => "brand" %>
-          </div>
-          <ul class="nav">
-            <li> <%= link_to "About", about_path %> </li>
-            <li> <%= link_to "Members", "/members" %> </li>
-            <li> <%= link_to "Executive Team", executive_team_path %> </li>
-            <li> <%= link_to "Calendar", events_path %> </li>
-            <li> <%= link_to "Jobs", jobs_path %> </li>
-            <li> <%= render "devise/menu/registration_items" %> </li>
-            <li> <%= render "devise/menu/login_items" %> </li>
-          </ul>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header class="header">
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="brand-wrapper">
+          <%= link_to (image_tag "disc_logo.png"), root_path, :class => "brand" %>
         </div>
+        <ul class="nav">
+          <li> <%= link_to "About", about_path %> </li>
+          <li> <%= link_to "Members", "/members" %> </li>
+          <li> <%= link_to "Executive Team", executive_team_path %> </li>
+          <li> <%= link_to "Calendar", events_path %> </li>
+          <li> <%= link_to "Jobs", jobs_path %> </li>
+          <li> <%= render "devise/menu/registration_items" %> </li>
+          <li> <%= render "devise/menu/login_items" %> </li>
+        </ul>
       </div>
     </div>
-    </header>
-    <div class="container">
-        <% unless defined?(resource).nil? %>
-          <%= devise_error_messages1! unless resource.errors.empty? %>
-        <% end %>
-        <%= content_tag(:p, notice, :class => "alert alert-success") if notice.present? %>
-        <%= content_tag(:p, alert, :class => "alert alert-failure") if alert.present? %>
-        
-    </div>
+  </div>
+  </header>
+  <div class="container">
+    <% unless defined?(resource).nil? %>
+      <%= devise_error_messages1! unless resource.errors.empty? %>
+    <% end %>
+    <% if notice.present? %>
+      <%= content_tag :p, :class => "alert alert-success" do %>
+        <%= notice %>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <% end %>
+    <% end %>
+    <% if alert.present? %>
+      <%= content_tag(:p, :class => "alert alert-error") do %>
+        <%= alert %>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <% end %>
+    <% end %>
+  </div>
 
     <div class="container">
       <div class="content">

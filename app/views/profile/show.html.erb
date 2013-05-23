@@ -1,4 +1,24 @@
-<h1>Welcome <%= @user.email %> <%= link_to("Edit", edit_user_registration_path(current_user), :class => "btn btn-primary") if current_user == @user %> </h1>
+<h1> <%= "Welcome" if current_user == @user %>
+  <%= @user.first_name %>
+  <%= link_to("Edit", edit_user_registration_path, :class => "btn btn-primary") if current_user == @user %> </h1>
 <hr>
-<h1>Courses</h1>
-You haven't filled out any courses. <%= link_to "Add", "#" %> a course?
+<div class="row">
+  <div class="span8">
+<h1>Courses <%= link_to("Add", "#", :class => "btn btn-primary") %></h1>
+</div>
+  <div class="span4">
+    <% if current_user == @user %>
+    <div class="well">
+      <h1><%= link_to "Jobs", jobs_path %></h1>
+      <% @jobs.each do |job| %>
+        <%= link_to job.job_title, job %> <br />
+      <% end %>
+      <hr>
+      <h1><%= link_to "Events", events_path %></h1>
+      <% @events.each do |event| %>
+        <%= link_to event.title, event %> <br />
+      <% end %>
+    </div>
+  <% end %>
+  </div>
+</div>

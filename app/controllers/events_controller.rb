@@ -31,7 +31,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @user.nil?
-        format.html { redirect_to attend_event_path(@event), notice: 'There was an error submitting your attendance.' }
+        format.html { redirect_to attend_event_path(@event), alert: 'There was an error submitting your attendance.' }
       else
         @user.attend(@event)
         format.html { redirect_to attend_event_path(@event), notice: 'Your attendance was successfully submitted.' }

@@ -1,9 +1,8 @@
 <div class="job">
-  <hr>
   <% @events.each do |event| %>
+  <hr>
     <%= link_to event.title, event, :class => "title" %>
     <%= content_tag :p, event.location, :class => "employer" %>
     <%= content_tag :p, event.start_time.to_formatted_s(:long), :class => "location" %>
-    <hr>
   <% end %>
-  </div>
+</div>

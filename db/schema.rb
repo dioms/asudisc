@@ -11,15 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130411230138) do
+ActiveRecord::Schema.define(:version => 20130429214337) do
 
-  create_table "courses", :force => true do |t|
-    t.string   "subject"
-    t.integer  "number"
-    t.string   "semester"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+# Could not dump table "courses" because of following StandardError
+#   Unknown type 'professor' for column 'string'
 
   create_table "events", :force => true do |t|
     t.string   "title"

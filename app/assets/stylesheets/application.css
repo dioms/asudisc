@@ -12,8 +12,27 @@
  *= require_self
  *= require_tree .
  */
+
+.job a {
+  color: #903;
+}
+
+h1 a {
+  color: #903;
+} 
 .content {
   padding-top: 20px;
+}
+
+.job {
+  height: 280px;
+}
+
+.alert {
+  margin-top: 20px;
+}
+
+.carousel {
 }
 
 .form-signin {
