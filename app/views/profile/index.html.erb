@@ -1,4 +1,5 @@
 <h1>Members</h1>
+<hr>
 <table class="table">
   <thead>
     <tr>
@@ -13,7 +14,7 @@
       <tr>
         <td><%= image_tag 'anonymous-icon.jpg' %></td>
         <td><%= link_to(u.full_name, profile_path(u)) %> </td>
-        <td><%= link_to("Make Admin", "#" , :class => "btn btn-primary") unless u.admin || current_user.try(:admin?) %>NA</td>
+        <td><%= link_to("Make Admin", make_admin_path(u) , :class => "btn btn-primary") if current_user.try(:admin?) && !u.admin %></td>
         <td>N/A</td>
       </tr>
     <% end %>

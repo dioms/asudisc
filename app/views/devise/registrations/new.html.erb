@@ -1,13 +1,11 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form-signin"}) do |f| %>
   <%= content_tag :h2, "Register", :class => "form-signin-heading" %>
-
-
   <%= f.email_field :email, :autofocus => true, :class => "input-block-level", :placeholder => "ASU Email address" %>
   <%= f.text_field :first_name, :class => "input-block-level", :placeholder => "First Name" %>
   <%= f.text_field :last_name, :class => "input-block-level", :placeholder => "Last Name" %>
   <%= f.password_field :password, :autofocus => true, :class => "input-block-level", :placeholder => "Password" %>
   <%= f.password_field :password_confirmation, :autofocus => true, :class => "input-block-level", :placeholder => "Password Confirmation" %>
-  <!-- calls expected_graduation which is in the application helper in order to populate the list of expected graduation dates.-->
+  <!-- calls expected_graduation() which is in the application helper in order to populate the list of expected graduation dates.-->
   <h5>Expected Graduation</h5>
   <%= select(:user, :graduation, expected_graduation(2014, 2017), {:include_blank => true} ) %>
 

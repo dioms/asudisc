@@ -1,18 +1,23 @@
 Asudisc::Application.routes.draw do
+  devise_for :users
   resources :events
-  match '/events/:id/attendance/', :to => 'events#attendance'
-  match '/events/:id/attend/', :to => 'events#attend', :as => :attend_event
+  resources :profile
   resources :jobs
 
-  match '/members', :to => 'profile#index'
-  resources :profile
-  match '/about', :to => 'navigation#about'
-  match '/executive_team', :to => 'navigation#executive_team'
+  #Events
+  match '/events/:id/attendance/', :to => 'events#attendance'
+  match '/events/:id/attend/', :to => 'events#attend', :as => :attend_event
 
-  devise_for :users
+  #User stuff
+  match '/members', :to => 'profile#index'
+  match '/profile/:id/make_admin', :to => 'profile#make_admin', :as => :make_admin
+
+  #Navigation
+  match '/about', :to => 'navigation#about'
+  match '/for_companies', :to => 'navigation#for_companies'
+  match '/executive_team', :to => 'navigation#executive_team'
   get "navigation/index"
   get "navigation/jobs"
-  get "status/user"
   root :to => 'navigation#index'
 
   # The priority is based upon order of creation:

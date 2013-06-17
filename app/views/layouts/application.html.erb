@@ -2,47 +2,59 @@
   <head>
     <title>ASU DISC</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <header class="header">
-  <div class="container">
-    <div class="navbar">
-      <div class="navbar-inner">
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="theme-pattern-lightmesh" style>
+    <header id="masthead">
+    <nav class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <!-- use an image logo
         <div class="brand-wrapper">
           <%= link_to (image_tag "disc_logo.png"), root_path, :class => "brand" %>
         </div>
-        <ul class="nav">
-          <li> <%= link_to "About", about_path %> </li>
-          <li> <%= link_to "Members", "/members" %> </li>
-          <li> <%= link_to "Executive Team", executive_team_path %> </li>
+        --> 
+        <h1 class="brand">
+          <%= link_to "ASUDISC", root_path %>
+        </h1>
+        <div class="nav-collapse collapse">
+        <ul class="nav pull-right">
+          <li> <%= link_to "About Us", about_path %> </li>
+          <!--          <li> <%= link_to "Members", "/members" %> </li> -->
           <li> <%= link_to "Calendar", events_path %> </li>
-          <li> <%= link_to "Jobs", jobs_path %> </li>
+          <!--          <li> <%= link_to "Jobs", jobs_path %> </li> -->
+          <li> <%= link_to "For Companies", for_companies_path %> </li>
           <li> <%= render "devise/menu/registration_items" %> </li>
           <li> <%= render "devise/menu/login_items" %> </li>
         </ul>
       </div>
+      </div>
     </div>
-  </div>
+  </nav>
   </header>
-  <div class="container">
     <% unless defined?(resource).nil? %>
-      <%= devise_error_messages1! unless resource.errors.empty? %>
-    <% end %>
-    <% if notice.present? %>
-      <%= content_tag :p, :class => "alert alert-success" do %>
-        <%= notice %>
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <div class="container">
+        <%= devise_error_messages1! unless resource.errors.empty? %>
       <% end %>
-    <% end %>
-    <% if alert.present? %>
-      <%= content_tag(:p, :class => "alert alert-error") do %>
-        <%= alert %>
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <% if notice.present? %>
+        <%= content_tag :p, :class => "alert alert-success" do %>
+          <%= notice %>
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <% end %>
       <% end %>
+      <% if alert.present? %>
+        <%= content_tag(:p, :class => "alert alert-error") do %>
+          <%= alert %>
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <% end %>
+      </div>
     <% end %>
-  </div>
 
     <div class="container">
       <div class="content">
@@ -50,5 +62,5 @@
       </div>
     </div>
 
-    </body>
-  </html>
+  </body>
+</html>

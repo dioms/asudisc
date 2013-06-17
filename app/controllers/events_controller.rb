@@ -40,6 +40,7 @@ class EventsController < ApplicationController
   end
 
   def attend
+    @event = Event.find(params[:id])
   end
 
   # GET /events/new
