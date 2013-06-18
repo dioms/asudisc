@@ -25,6 +25,7 @@ class EventsController < ApplicationController
     end
   end
 
+  # This page actually saves the attendance to the database
   def attendance
     @event = Event.find(params[:id])
     @user = User.find_by_email(params[:email])
@@ -39,6 +40,7 @@ class EventsController < ApplicationController
     end
   end
 
+  # This page sets up the email form
   def attend
     @event = Event.find(params[:id])
   end
