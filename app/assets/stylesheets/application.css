@@ -18,14 +18,19 @@
 }
 
 .alert {
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .executiveteam {
   font-size: 18px;
 }
 
-.carousel {
+.navbar-inner {
+  background-color: #ffcb66
+}
+
+.navbar.navbar-fixed-top {
+  border-bottom: 4px solid #903;
 }
 
 .form-signin {

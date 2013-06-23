@@ -1,9 +1,125 @@
-<div class="row">
-  <div class="span5">
-    <div class="well">
-      <h1><%= link_to "Events", events_path %> </h1>
-      <%= render :partial => 'event' %>
+<div id="content" role="main">
+  <section class="section alt" id="promo">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span6">
+        <div class="hero-unit">
+          <h1>Become a member today!</h1>
+          <p>Join a growing community with tons of perks:</p>
+          <ul class="icons">
+            <li> <i class="icon-ok"></i>
+            "Professional Development"
+            </li>
+            <li> <i class="icon-ok"></i>
+            "Social Events"
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="span6">
+        <div class="well">
+          <%= image_tag("slide_2.jpg") %>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="span6">
+  </section>
+  <section class="section">
+  <div class="container">
+    <div class="page-header">
+      <h1>Member Benefits <small>You're going to love them!</small></h1>
+    </div>
+    <div class="row-fluid">
+      <ul class="thumbnails bordered">
+        <li class="span6">
+        <div class="row-fluid">
+          <div class="span4 pull-center">
+            <i class="icon-beaker enormous-icon circled pull-center"></i>
+          </div>
+          <div class="span8">
+            <h3>Web labs</h3>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="row-fluid">
+          <div class="span4 pull-center">
+            <i class="icon-map-marker enormous-icon circled pull-center"></i>
+          </div>
+          <div class="span8">
+            <h3>Geolocation</h3>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+        </li>
+        <li class="span6">
+        <div class="row-fluid">
+          <div class="span4 pull-center">
+            <i class="icon-cloud enormous-icon circled pull-center"></i>
+          </div>
+          <div class="span8">
+            <h3>Cloud services</h3>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="row-fluid">
+          <div class="span4 pull-center">
+            <i class="icon-comments-alt enormous-icon circled pull-center"></i>
+          </div>
+          <div class="span8">
+            <h3>Social apps</h3>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+        </li>
+      </ul>
+    </div>
   </div>
+  </section>
+  <section class="section alt">
+  <div class="container">
+    <div class="page-header">
+      <h1>
+        Our Partners
+      </h1>
+    </div>
+    <div class="row-fluid">
+      <ul class="thumbnails bordered pull-center">
+        <li class="span2">
+        <%= image_tag ("adobe.png") %>
+        <h3>Adobe</h3>
+        </li>
+        <li class="span2">
+        <%= image_tag ("apple.png") %>
+        <h3>Apple</h3>
+        </li>
+        <li class="span2">
+        <%= image_tag ("gnome.png") %>
+        <h3>Gnome</h3>
+        </li>
+        <li class="span2">
+        <%= image_tag ("wordpress.png") %>
+        <h3>Wordpress</h3>
+        </li>
+        <li class="span2">
+        <%= image_tag ("html5.png") %>
+        <h3>Html5</h3>
+        </li>
+        <li class="span2">
+        <%= image_tag ("twitter.png") %>
+        <h3>twitter</h3>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </section>
+</div>

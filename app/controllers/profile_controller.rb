@@ -1,4 +1,7 @@
 class ProfileController < ApplicationController
+
+  layout "user_panel"
+
   def index
     @users = User.find(:all, :order => "email asc")
   end

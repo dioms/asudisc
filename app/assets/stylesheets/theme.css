@@ -1,4 +1,4 @@
-rset "UTF-8";
+@charset "UTF-8";
 /*
  * SmartBiz - ver 2.0
  *
@@ -7,190 +7,6 @@ rset "UTF-8";
  * (c) 2013 Oxygenna.com
  *
  */
-#style-switcher {
-  position: absolute;
-  right: 100px;
-  top: 50%;
-  right: -35px;
-  margin: -17px 0 0;
-  z-index: 10000;
-}
-#style-switcher .btn, #style-switcher .btn-group.open .dropdown-toggle {
-  font-size: 13px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-  width: 2.5em;
-  height: 2.5em;
-  padding: 0;
-}
-#style-switcher .dropdown-menu {
-  width: 250px;
-  left: -200px;
-  margin-top: 26px;
-  background-color: rgba(253, 253, 253, 0.8);
-  border-color: #e9e9e9;
-  -webkit-box-shadow: 0px 1px 1px rgba(153, 153, 153, 0.4), 0px 0px 30px rgba(233, 233, 233, 0.4) inset;
-  -moz-box-shadow: 0px 1px 1px rgba(153, 153, 153, 0.4), 0px 0px 30px rgba(233, 233, 233, 0.4) inset;
-  box-shadow: 0px 1px 1px rgba(153, 153, 153, 0.4), 0px 0px 30px rgba(233, 233, 233, 0.4) inset;
-}
-#style-switcher .dropdown-menu ul {
-  list-style-type: none;
-  margin: 0;
-}
-#style-switcher .dropdown-menu ul:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-#style-switcher .theme-colors, #style-switcher .theme-patterns {
-  text-align: center;
-}
-#style-switcher .theme-colors li, #style-switcher .theme-patterns li {
-  display: inline-block;
-}
-#style-switcher .theme-colors li a, #style-switcher .theme-patterns li a {
-  display: inline-block;
-  text-indent: -999em;
-  width: 42px;
-  height: 42px;
-  margin: 10px;
-  padding: 0;
-  -webkit-transition: all, 0.2s;
-  -moz-transition: all, 0.2s;
-  -o-transition: all, 0.2s;
-  transition: all, 0.2s;
-  cursor: pointer;
-}
-#style-switcher .theme-colors a {
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-}
-#style-switcher .theme-colors .color-green {
-  background-color: #779922;
-  -webkit-box-shadow: 0px 2px 4px #576f19 inset;
-  -moz-box-shadow: 0px 2px 4px #576f19 inset;
-  box-shadow: 0px 2px 4px #576f19 inset;
-}
-#style-switcher .theme-colors .color-green:hover {
-  background-color: #6d8c1f;
-  background-image: none;
-  -webkit-box-shadow: 0px 3px 6px #36460f inset;
-  -moz-box-shadow: 0px 3px 6px #36460f inset;
-  box-shadow: 0px 3px 6px #36460f inset;
-}
-#style-switcher .theme-colors .color-red {
-  background-color: #e8481d;
-  -webkit-box-shadow: 0px 2px 4px #bf3813 inset;
-  -moz-box-shadow: 0px 2px 4px #bf3813 inset;
-  box-shadow: 0px 2px 4px #bf3813 inset;
-}
-#style-switcher .theme-colors .color-red:hover {
-  background-color: #df4117;
-  background-image: none;
-  -webkit-box-shadow: 0px 3px 6px #902a0f inset;
-  -moz-box-shadow: 0px 3px 6px #902a0f inset;
-  box-shadow: 0px 3px 6px #902a0f inset;
-}
-#style-switcher .theme-colors .color-blue {
-  background-color: #41b7d8;
-  -webkit-box-shadow: 0px 2px 4px #279ebf inset;
-  -moz-box-shadow: 0px 2px 4px #279ebf inset;
-  box-shadow: 0px 2px 4px #279ebf inset;
-}
-#style-switcher .theme-colors .color-blue:hover {
-  background-color: #34b2d5;
-  background-image: none;
-  -webkit-box-shadow: 0px 3px 6px #1e7b95 inset;
-  -moz-box-shadow: 0px 3px 6px #1e7b95 inset;
-  box-shadow: 0px 3px 6px #1e7b95 inset;
-}
-#style-switcher .theme-patterns li {
-  display: block;
-  float: left;
-}
-#style-switcher .theme-patterns li:nth-child(4n+1) {
-  clear: both;
-}
-#style-switcher .theme-patterns a {
-  -webkit-box-shadow: 0px 1px 4px rgba(85, 85, 85, 0.5) inset;
-  -moz-box-shadow: 0px 1px 4px rgba(85, 85, 85, 0.5) inset;
-  box-shadow: 0px 1px 4px rgba(85, 85, 85, 0.5) inset;
-}
-#style-switcher .theme-patterns a:hover {
-  background-color: transparent;
-  -webkit-box-shadow: 0px 1px 6px rgba(85, 85, 85, 0.7) inset;
-  -moz-box-shadow: 0px 1px 6px rgba(85, 85, 85, 0.7) inset;
-  box-shadow: 0px 1px 6px rgba(85, 85, 85, 0.7) inset;
-}
-#style-switcher .theme-patterns .pattern-lightmesh {
-  background-image: url(../images/patterns_samples/lghtmesh.png);
-}
-#style-switcher .theme-patterns .pattern-bedge-grunge {
-  background-image: url(../images/patterns_samples/bedge_grunge.png);
-}
-#style-switcher .theme-patterns .pattern-grid {
-  background-image: url(../images/patterns_samples/grid.png);
-}
-#style-switcher .theme-patterns .pattern-noisy-grid {
-  background-image: url(../images/patterns_samples/noisy_grid.png);
-}
-#style-switcher .theme-patterns .pattern-subtle-grey {
-  background-image: url(../images/patterns_samples/grey.png);
-}
-#style-switcher .theme-patterns .pattern-retina-wood {
-  background-image: url(../images/patterns_samples/retina_wood.png);
-}
-#style-switcher .theme-patterns .pattern-noise-lines {
-  background-image: url(../images/patterns_samples/noise_lines.png);
-}
-#style-switcher .theme-patterns .pattern-tiny-grid {
-  background-image: url(../images/patterns_samples/tiny_grid.png);
-}
-#style-switcher .theme-patterns .pattern-clean-paper {
-  background-image: url(../images/patterns_samples/extra_clean_paper.png);
-}
-#style-switcher .theme-patterns .pattern-farmer {
-  background-image: url(../images/patterns_samples/farmer.png);
-}
-#style-switcher .theme-patterns .pattern-project-papper {
-  background-image: url(../images/patterns_samples/project_papper.png);
-}
-#style-switcher .theme-patterns .pattern-concrete-wall {
-  background-image: url(../images/patterns_samples/concrete_wall_2.png);
-}
-#style-switcher .theme-patterns .pattern-wavecut {
-  background-image: url(../images/patterns_samples/wavecut.png);
-}
-#style-switcher .theme-patterns .pattern-little-pluses {
-  background-image: url(../images/patterns_samples/little_pluses.png);
-}
-#style-switcher .theme-patterns .pattern-light-honeycomp {
-  background-image: url(../images/patterns_samples/light_honeycomb.png);
-}
-#style-switcher .theme-patterns .pattern-old-mathematics {
-  background-image: url(../images/patterns_samples/old_mathematics.png);
-}
-#style-switcher .theme-patterns .pattern-45-degree-fabric {
-  background-image: url(../images/patterns_samples/45degreee_fabric.png);
-}
-#style-switcher .theme-patterns .pattern-strange-bullseyes {
-  background-image: url(../images/patterns_samples/strange_bullseyes.png);
-}
-#style-switcher .theme-patterns .pattern-diamond-upholstery {
-  background-image: url(../images/patterns_samples/diamond_upholstery.png);
-}
-#style-switcher .theme-patterns .pattern-subtle-stripes {
-  background-image: url(../images/patterns_samples/subtle_stripes.png);
-}
-
 /* GENERAL MARKUP RULES */
 /* -------------------- */
 body {
@@ -316,8 +132,9 @@ figure {
 }
 
 .navbar-inner {
-  background: white;
-  background: rgba(255, 255, 255, 0.95);
+  /** background: white;
+  background: rgba(255, 255, 255, 0.95); **/
+  background: #ffcb66;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -399,8 +216,8 @@ figure {
 /* FOOTER SECTION */
 /* --------------- */
 #footer {
-  background: #333333;
-  color: #e9e9e9;
+  background: #ffcb66;
+  color: #333333;
   border-top: 1px solid black;
   text-shadow: 1px 1px 1px #222222;
   -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25) inset;
@@ -1113,102 +930,102 @@ figure {
 /* THEME PATTERNS */
 /* -------------- */
 .theme-pattern-lightmesh .section.alt, .theme-pattern-lightmesh.alt {
-  background-image: url(../images/patterns/lghtmesh.png);
+  background-image: url(/images/patterns/lghtmesh.png);
   background-size: 256px 256px;
 }
 
 .theme-pattern-bedge-grunge .section.alt, .theme-pattern-bedge-grunge.alt {
-  background-image: url(../images/patterns/bedge_grunge.png);
+  background-image: url(/images/patterns/bedge_grunge.png);
   background-size: 588px  375px;
 }
 
 .theme-pattern-grid .section.alt, .theme-pattern-grid.alt {
-  background-image: url(../images/patterns/grid.png);
+  background-image: url(/images/patterns/grid.png);
   background-size: 310px  310px;
 }
 
 .theme-pattern-noisy-grid .section.alt, .theme-pattern-noisy-grid.alt {
-  background-image: url(../images/patterns/noisy_grid.png);
+  background-image: url(/images/patterns/noisy_grid.png);
   background-size: 150px  150px;
 }
 
 .theme-pattern-subtle-grey .section.alt, .theme-pattern-subtle-grey.alt {
-  background-image: url(../images/patterns/grey.png);
+  background-image: url(/assets/images/patterns/grey.png);
   background-size: 397px  322px;
 }
 
 .theme-pattern-retina-wood .section.alt, .theme-pattern-retina-wood.alt {
-  background-image: url(../images/patterns/retina_wood.png);
+  background-image: url(/assets/images/patterns/retina_wood.png);
   background-size: 512px 512px;
 }
 
 .theme-pattern-noise-lines .section.alt, .theme-pattern-noise-lines.alt {
-  background-image: url(../images/patterns/noise_lines.png);
+  background-image: url(/assets/images/patterns/noise_lines.png);
   background-size: 60px 59px;
 }
 
 .theme-pattern-tiny-grid .section.alt, .theme-pattern-tiny-grid.alt {
-  background-image: url(../images/patterns/tiny_grid.png);
+  background-image: url(/assets/images/patterns/tiny_grid.png);
   background-size: 26px 26px;
 }
 
 .theme-pattern-clean-paper .section.alt, .theme-pattern-clean-paper.alt {
-  background-image: url(../images/patterns/extra_clean_paper.png);
+  background-image: url(/assets/images/patterns/extra_clean_paper.png);
   background-size: 512px 512px;
 }
 
 .theme-pattern-farmer .section.alt, .theme-pattern-farmer.alt {
-  background-image: url(../images/patterns/farmer.png);
+  background-image: url(/assets/images/patterns/farmer.png);
   background-size: 349px 349px;
 }
 
 .theme-pattern-project-papper .section.alt, .theme-pattern-project-papper.alt {
-  background-image: url(../images/patterns/project_papper.png);
+  background-image: url(/assets/images/patterns/project_papper.png);
   background-size: 105px 105px;
 }
 
 .theme-pattern-concrete-wall .section.alt, .theme-pattern-concrete-wall.alt {
-  background-image: url(../images/patterns/concrete_wall_2.png);
+  background-image: url(/assets/images/patterns/concrete_wall_2.png);
   background-size: 597px 545px;
 }
 
 .theme-pattern-wavecut .section.alt, .theme-pattern-wavecut.alt {
-  background-image: url(../images/patterns/wavecut.png);
+  background-image: url(/assets/images/patterns/wavecut.png);
   background-size: 162px 15px;
 }
 
 .theme-pattern-little-pluses .section.alt, .theme-pattern-little-pluses.alt {
-  background-image: url(../images/patterns/little_pluses.png);
+  background-image: url(/assets/images/patterns/little_pluses.png);
   background-size: 300px 300px;
 }
 
 .theme-pattern-light-honeycomp .section.alt, .theme-pattern-light-honeycomp.alt {
-  background-image: url(../images/patterns/light_honeycomb.png);
+  background-image: url(/assets/images/patterns/light_honeycomb.png);
   background-size: 270px 289px;
 }
 
 .theme-pattern-old-mathematics .section.alt, .theme-pattern-old-mathematics.alt {
-  background-image: url(../images/patterns/old_mathematics.png);
+  background-image: url(/assets/images/patterns/old_mathematics.png);
   background-size: 200px 200px;
 }
 
 .theme-pattern-45-degree-fabric .section.alt, .theme-pattern-45-degree-fabric.alt {
-  background-image: url(../images/patterns/45degreee_fabric.png);
+  background-image: url(/assets/images/patterns/45degreee_fabric.png);
   background-size: 315px 315px;
 }
 
 .theme-pattern-strange-bullseyes .section.alt, .theme-pattern-strange-bullseyes.alt {
-  background-image: url(../images/patterns/strange_bullseyes.png);
+  background-image: url(/assets/images/patterns/strange_bullseyes.png);
   background-size: 300px 300px;
 }
 
 .theme-pattern-diamond-upholstery .section.alt, .theme-pattern-diamond-upholstery.alt {
-  background-image: url(../images/patterns/diamond_upholstery.png);
+  background-image: url(/assets/images/patterns/diamond_upholstery.png);
   background-size: 200px 200px;
 }
 
 .theme-pattern-subtle-stripes .section.alt, .theme-pattern-subtle-stripes.alt {
-  background-image: url(../images/patterns/subtle_stripes.png);
+  background-image: url(/assets/images/patterns/subtle_stripes.png);
   background-size: 40px 40px;
 }
 
