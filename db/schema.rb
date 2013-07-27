@@ -13,8 +13,14 @@
 
 ActiveRecord::Schema.define(:version => 20130523015049) do
 
-# Could not dump table "courses" because of following StandardError
-#   Unknown type 'professor' for column 'string'
+  create_table "courses", :force => true do |t|
+    t.string   "subject"
+    t.integer  "number"
+    t.string   "semester"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "professor"
+  end
 
   create_table "events", :force => true do |t|
     t.string   "title"
