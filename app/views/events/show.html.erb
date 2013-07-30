@@ -1,37 +1,21 @@
-<p>
-  <b>Title:</b>
-  <%= @event.title %>
-</p>
+<div class="container">
+	<br />
+	<h1> <%= @event.title %> <small> <%= @event.event_type %> </small> </h1>
+	<hr>
 
-<p>
-<b>Type:</b>
-<%= @event.event_type %>
-</p>
-<p>
-  <b>Date:</b>
-  <%= @event.date %>
-</p>
+	<i class="icon-calendar"></i> <%= @event.date.strftime("%B %d, %Y") %> | <i class="icon-time"></i> <%= @event.start_time.strftime("%l:%M%p").downcase %> until <%= @event.end_time.strftime("%l:%M%p").downcase %>
 
-<p>
-  <b>Start time:</b>
-  <%= @event.start_time %>
-</p>
+	<hr>
+	<p>
+	<b>Location:</b>
+	<%= @event.location %>
+	</p>
 
-<p>
-  <b>End time:</b>
-  <%= @event.end_time %>
-</p>
+	<p>
+	<b>Description:</b>
+	<%= @event.description %>
+	</p>
 
-<p>
-  <b>Location:</b>
-  <%= @event.location %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @event.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+	<%= link_to 'Edit', edit_event_path(@event) %> |
+	<%= link_to 'Back', events_path %>
+</div>

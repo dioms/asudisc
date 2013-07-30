@@ -7,6 +7,7 @@ Asudisc::Application.routes.draw do
   #Events
   match '/events/:id/attendance/', :to => 'events#attendance'
   match '/events/:id/attend/', :to => 'events#attend', :as => :attend_event
+  match '/calendar', :to => 'events#calendar'
 
   #User stuff
   match '/members', :to => 'profile#index'
