@@ -2,5 +2,6 @@
  * application-all.css
  *
  *= require_self
+ *= require font-awesome
  *= require_tree ./all
  */
