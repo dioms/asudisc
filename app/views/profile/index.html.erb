@@ -17,7 +17,7 @@
               <td><%= image_tag 'anonymous-icon.jpg' %></td>
               <td><%= link_to(u.full_name, profile_path(u)) %> </td>
               <td><%= link_to("Make Admin", make_admin_path(u) , :class => "btn btn-primary") if current_user.try(:admin?) && !u.admin %></td>
-              <td>N/A</td>
+              <td><%= u.graduation %></td>
             </tr>
           <% end %>
         </tbody>

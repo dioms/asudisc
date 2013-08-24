@@ -12,6 +12,4 @@ class NavigationController < ApplicationController
   def about
   end
 
-  def for_companies
-  end
 end
