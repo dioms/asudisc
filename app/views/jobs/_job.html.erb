@@ -1,11 +1,8 @@
-<div class="job">
   <hr >
 <% @jobs.each do |job| %>
-  <%= link_to job.job_title, job, :class => "title" %>
-  <%= content_tag :p, job.company_name, :class => "employer" %>
-  <%= content_tag :p, job.city, :class => "location" %>
+  <h3><%= link_to job.job_title, job, :class => "title" %></h3>
+  <b>Employer:</b><%= job.company_name %> <br />
+  <b>City</b><%= job.city %>
     <%# link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %>
     <hr>
 <% end %>
-
-</div>

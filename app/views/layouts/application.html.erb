@@ -37,7 +37,8 @@
               <ul class="nav pull-right">
                 <li class=""> <%= link_to "About Us", about_path %> </li>
                 <li class=""> <%= link_to "Calendar", events_path %> </li>
-                <li class=""><%= link_to 'Post a Job', new_job_path %>  </li>
+                <li class=""><%= link_to 'Post a Job', new_job_path unless current_user %>  </li>
+                <li class=""><%= link_to 'Jobs', jobs_path if current_user %>  </li>
                 <li class=""><%= link_to 'Members', members_path if current_user %> </li>
                 <%= render "devise/menu/registration_items" %>
                 <%= render "devise/menu/login_items" %>
