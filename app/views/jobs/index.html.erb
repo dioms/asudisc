@@ -1,8 +1,10 @@
 <section class="section" role="main">
 <div class="container">
 
-<h1>Job Listings</h1>
-<%= render :partial => 'job' %>
-<br />
+  <h1>Job Listings
+    <%= link_to 'Add a job', new_job_path, class: "btn btn-success" %>
+  </h1>
+  <%= render :partial => 'job' %>
+  <br />
 </div>
 </section>

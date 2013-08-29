@@ -1,8 +1,8 @@
-  <hr >
+<hr >
 <% @jobs.each do |job| %>
   <h3><%= link_to job.job_title, job, :class => "title" %></h3>
   <b>Employer:</b><%= job.company_name %> <br />
   <b>City</b><%= job.city %>
-    <% link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } if current_user.try(:admin?) %>
-    <hr>
+  <%= link_to 'Remove', job, method: :delete, data: { confirm: 'Are you sure?' } if current_user.try(:admin?) %>
+  <hr>
 <% end %>
