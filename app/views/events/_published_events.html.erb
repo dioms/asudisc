@@ -1,5 +1,5 @@
 <% if @published_events.present? %>
-  <% @published_events.each do |event| %>
+  <% @published_events.desc.each do |event| %>
     <h3><%= link_to event.title, event %></h3>
     <b>When:</b> <%= time_tag event.date %> <br />
     <b>What time:</b><%= event.start_time.strftime("%I:%M %p") %> -
