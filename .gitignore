@@ -15,4 +15,3 @@
 /tmp
 *.swp
 .DS_Store
-config/initializers/recaptcha.rb
