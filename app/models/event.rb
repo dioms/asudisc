@@ -8,5 +8,5 @@ class Event < ActiveRecord::Base
   TYPES = ['Site Tour', 'General Meeting', 'Community Service', 'Social']
   STATUS = ['Publish', 'Draft']
 
-  scope :desc, order("events.date DESC")
+  scope :asc, order("events.date ASC")
 end
