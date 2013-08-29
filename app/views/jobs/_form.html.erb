@@ -26,6 +26,7 @@
     <%= f.text_area :requirements, :rows => "3", :class => "input-xxlarge" %>
     <%= f.label :company_description %>
     <%= f.text_area :company_description, :rows => "3", :class => "input-xxlarge" %>
+    <%= recaptcha_tags %>
     <%= f.submit "Create Job Listing", :class => "btn btn-primary" %>
 <%= link_to 'Back', jobs_path %>
   </div>

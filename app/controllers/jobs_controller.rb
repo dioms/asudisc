@@ -42,18 +42,22 @@ class JobsController < ApplicationController
   # POST /jobs
   # POST /jobs.json
   def create
-    @job = Job.new(params[:job])
+    if verify_recaptcha
 
-    respond_to do |format|
-      if @job.save
-        format.html { redirect_to new_job_path, notice: 'Job was successfully created.' }
-        format.json { render json: @job, status: :created, location: @job }
+      @job = Job.new(params[:job])
+      respond_to do |format|
+        if @job.save
+          format.html { redirect_to new_job_path, notice: 'Job was successfully created.' }
+          format.json { render json: @job, status: :created, location: @job }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @job.errors, status: :unprocessable_entity }
+        end
+      end
       else
-        format.html { render action: "new" }
-        format.json { render json: @job.errors, status: :unprocessable_entity }
+        redirect_to new_job_path, notice: 'Captcha was wrong'
       end
     end
-  end
 
   # PUT /jobs/1
   # PUT /jobs/1.json
