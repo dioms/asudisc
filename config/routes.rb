@@ -1,4 +1,6 @@
 Asudisc::Application.routes.draw do
+  match '/payment_notification', :to => 'payment_notifications#create'
+
   devise_for :users
   resources :events
   resources :profile
@@ -12,6 +14,8 @@ Asudisc::Application.routes.draw do
   #User stuff
   match '/members', :to => 'profile#index'
   match '/dues', :to => 'profile#dues'
+  match '/dues_error', :to => 'profile#dues_error'
+  match '/dues_successful', :to => 'profile#dues_successful'
   match '/profile/:id/make_admin', :to => 'profile#make_admin', :as => :make_admin
 
   #Navigation

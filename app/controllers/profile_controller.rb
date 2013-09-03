@@ -27,4 +27,9 @@ class ProfileController < ApplicationController
   def dues
   end
 
+  def dues_successful
+  end
+
+  def dues_error
+  end
 end

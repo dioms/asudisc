@@ -28,4 +28,5 @@ class User < ActiveRecord::Base
     return false if self.nil?
     return true if self.events << event
   end
+
 end

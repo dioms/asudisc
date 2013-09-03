@@ -15,4 +15,10 @@ class NavigationController < ApplicationController
   def donate
   end
 
+  def dues_successful
+  end
+
+  def dues_error
+  end
+
 end
