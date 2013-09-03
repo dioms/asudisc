@@ -9,6 +9,7 @@ class PaymentNotification < ActiveRecord::Base
     if status == "Completed"
       u = User.find(user_id)
       u.update_attributes(:has_paid => true)
+      u.save!
     end
   end
 
