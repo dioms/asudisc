@@ -11,12 +11,14 @@ Asudisc::Application.routes.draw do
 
   #User stuff
   match '/members', :to => 'profile#index'
+  match '/dues', :to => 'profile#dues'
   match '/profile/:id/make_admin', :to => 'profile#make_admin', :as => :make_admin
 
   #Navigation
   match '/about', :to => 'navigation#about'
   match '/for_companies', :to => 'navigation#for_companies'
   match '/executive_team', :to => 'navigation#executive_team'
+  match '/donate', :to => 'navigation#donate'
   get "navigation/index"
   get "navigation/jobs"
   root :to => 'navigation#index'

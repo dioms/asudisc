@@ -23,4 +23,8 @@ class ProfileController < ApplicationController
       end
     end
   end
+
+  def dues
+  end
+
 end
