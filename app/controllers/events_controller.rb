@@ -5,7 +5,8 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @published_events = Event.where(status: "Publish")
+    @published_events = Event.where("status = :status AND date >= :date",
+                                    {status: "Publish", date: DateTime.now})
     @draft_events = Event.where(status: "Draft")
 
     respond_to do |format|
