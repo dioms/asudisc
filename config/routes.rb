@@ -25,6 +25,7 @@ Asudisc::Application.routes.draw do
   match '/donate', :to => 'navigation#donate'
   get "navigation/index"
   get "navigation/jobs"
+  match '/microsoft', :to => 'navigation#microsoft'
   root :to => 'navigation#index'
 
   # The priority is based upon order of creation:

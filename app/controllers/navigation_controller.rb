@@ -21,4 +21,7 @@ class NavigationController < ApplicationController
   def dues_error
   end
 
+  def microsoft
+  end
+
 end
