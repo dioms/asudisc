@@ -13,6 +13,18 @@
  *= require_tree .
  */
 
+.site-tour h3 a {
+  color: green;
+}
+
+.community-service h3 a {
+  color: yellow;
+}
+
+.social {
+  color: red;
+}
+
 .content {
   padding-top: 20px;
 }
