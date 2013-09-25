@@ -1,0 +1,22 @@
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<style> #members svg { height: 400px; } </style>
+<section class="section" role="main">
+<div class="container">
+  <div class="page-header">
+    <h1> DISC Dashboard </h1>
+  </div>
+
+  <h2> Paid Users </h1>
+  <%= pie_chart User.group("has_paid").count %>
+
+  <h1> Event graduation breakdown <h1>
+      <% @general_meetings.each do |meeting| %>
+        <h3> <%= meeting.title %> </h3>
+        <%= pie chart meeting.users.group("graduation_date").count %>
+      <% end %>
+
+  
+
+
+</div>
+</section>

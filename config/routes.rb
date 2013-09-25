@@ -1,4 +1,6 @@
 Asudisc::Application.routes.draw do
+  get "dashboard/members"
+
   match '/payment_notification', :to => 'payment_notifications#create'
 
   devise_for :users

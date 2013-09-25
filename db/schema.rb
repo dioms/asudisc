@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130903191250) do
+ActiveRecord::Schema.define(:version => 20130924183319) do
 
   create_table "courses", :force => true do |t|
     t.string   "subject"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20130903191250) do
     t.string   "last_name",              :default => "",    :null => false
     t.boolean  "has_paid",               :default => false, :null => false
     t.string   "graduation"
+    t.string   "resume"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
