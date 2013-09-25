@@ -10,9 +10,11 @@
   <%= pie_chart User.group("has_paid").count %>
 
   <h1> Event graduation breakdown <h1>
-      <% @general_meetings.each do |meeting| %>
+      <% @general_meetings.asc.each do |meeting| %>
+        <% unless meeting.users.empty? %>
         <h3> <%= meeting.title %> </h3>
         <%= pie_chart meeting.users.group("graduation").count %>
+        <% end %>
       <% end %>
 
   
