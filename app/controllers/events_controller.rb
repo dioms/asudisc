@@ -29,11 +29,14 @@ class EventsController < ApplicationController
   # This page actually saves the attendance to the database
   def attendance
     @event = Event.find(params[:id])
-    @user = User.find_by_email(params[:email])
+    #@user = User.find_by_email(params[:email])
+    @user = User.first(conditions: [ "lower(email) = ?", params[:email].downcase])
 
     respond_to do |format|
       if @user.nil?
-        format.html { redirect_to attend_event_path(@event), alert: 'There was an error submitting your attendance.' }
+        format.html { redirect_to attend_event_path(@event), alert: 'No user could be found with this email.' }
+      elsif @event.users.include? @user
+        format.html { redirect_to attend_event_path(@event), alert: 'Your attendance has already been tracked for this event.' }
       else
         @user.attend(@event)
         format.html { redirect_to attend_event_path(@event), notice: 'Your attendance was successfully submitted.' }
