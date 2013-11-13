@@ -1,11 +1,13 @@
 <div id="content" role="main">
   <section class="section alt" id="promo">
   <div class="container">
+    <% if @notification %>
     <div id="notification" class="alert alert-info">
       <center>
       <%= link_to @notification.title, @notification %>
       </center>
     </div>
+  <% end %>
     <div class="row-fluid">
       <div class="span6">
         <div class="hero-unit">
