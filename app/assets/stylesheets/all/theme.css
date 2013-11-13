@@ -1458,7 +1458,7 @@ figure {
   }
 
   .theme-pattern-subtle-grey .section.alt, .theme-pattern-subtle-grey.alt {
-    background-image: url(../images/patterns/grey_@2X.png);
+    background-image: url(/assetsimages/patterns/grey_@2X.png);
   }
 
   .theme-pattern-retina-wood .section.alt, .theme-pattern-retina-wood.alt {
