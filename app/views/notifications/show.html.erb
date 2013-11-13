@@ -1,0 +1,15 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= @notification.title %>
+  <small><%= time_tag @notification.created_at %>
+</h1>
+
+<div class="well">
+  <%= @notification.content %>
+</div>
+
+
+<%= link_to 'Back', notifications_path %>
+</div>

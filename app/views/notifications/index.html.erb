@@ -1,0 +1,17 @@
+<div class="container">
+<h1>Listing notifications</h1>
+<%= link_to 'New Notification', new_notification_path, class: "btn btn-primary" if current_user.try(:admin?) %>
+
+<% @notifications.each do |notification| %>
+  <h3>
+    <%= link_to notification.title, notification %>
+    <small>
+      <%= time_tag notification.created_at %>
+      <%= link_to 'Edit', edit_notification_path(notification) if current_user.try(:admin?) %>
+      <%= link_to 'Destroy', notification, method: :delete, data: { confirm: 'Are you sure?' } if current_user.try(:admin?) %>
+    </small>
+  </h3>
+<% end %>
+
+
+</div>
