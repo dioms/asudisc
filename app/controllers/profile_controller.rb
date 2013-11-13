@@ -8,6 +8,7 @@ class ProfileController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @courses = current_user.courses
     @events = Event.order("date ASC").limit(3)
     @jobs = Job.last(3)
   end

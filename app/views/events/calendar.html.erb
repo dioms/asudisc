@@ -1,8 +1,11 @@
-<link href='../fullcalendar/fullcalendar.css' rel='stylesheet' />
-<link href='../fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
-<script src='../jquery/jquery-1.9.1.min.js'></script>
-<script src='../jquery/jquery-ui-1.10.2.custom.min.js'></script>
-<script src='../fullcalendar/fullcalendar.min.js'></script>
+<%= stylesheet_link_tag    "application-calendar", :media => "all" %>
+<%= javascript_include_tag "application-calendar" %>
+<div class="container">
+  <center>
+<%= link_to('List View', events_path, :class => "btn btn-primary") %></h1>
+  <center/>
+<div id='calendar'></div>
+</div>
 <script>
 
 	$(document).ready(function() {
@@ -20,50 +23,15 @@
 			},
 			editable: true,
 			events: [
-				{
-					title: 'All Day Event',
-					start: new Date(y, m, 1)
-				},
-				{
-					title: 'Long Event',
-					start: new Date(y, m, d-5),
-					end: new Date(y, m, d-2)
-				},
-				{
-					id: 999,
-					title: 'Repeating Event',
-					start: new Date(y, m, d-3, 16, 0),
-					allDay: false
-				},
-				{
-					id: 999,
-					title: 'Repeating Event',
-					start: new Date(y, m, d+4, 16, 0),
-					allDay: false
-				},
-				{
-					title: 'Meeting',
-					start: new Date(y, m, d, 10, 30),
-					allDay: false
-				},
-				{
-					title: 'Lunch',
-					start: new Date(y, m, d, 12, 0),
-					end: new Date(y, m, d, 14, 0),
-					allDay: false
-				},
-				{
-					title: 'Birthday Party',
-					start: new Date(y, m, d+1, 19, 0),
-					end: new Date(y, m, d+1, 22, 30),
-					allDay: false
-				},
-				{
-					title: 'Click for Google',
-					start: new Date(y, m, 28),
-					end: new Date(y, m, 29),
-					url: 'http://google.com/'
-				}
+      <% @events.each do |event| %>
+        {
+          title:  '<%= event.title %>',
+          start:  new Date(<%= event.pretty_start_time.to_i * 1000 %>),
+          end:    new Date(<%= event.pretty_end_time.to_i * 1000 %>),
+          allDay: false,
+          url:    '<%= event_path(event) %>'
+        },
+      <% end %>
 			]
 		});
 		
@@ -74,7 +42,6 @@
 
 	body {
 		margin-top: 40px;
-		text-align: center;
 		font-size: 14px;
 		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
 		}
@@ -85,4 +52,3 @@
 		}
 
 </style>
-<div id='calendar'></div>

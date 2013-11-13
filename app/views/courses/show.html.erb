@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @course.name %>
+</p>
+
+<p>
+  <b>Start:</b>
+  <%= @course.start %>
+</p>
+
+<p>
+  <b>Professor:</b>
+  <%= @course.professor %>
+</p>
+
+<p>
+  <b>Semester:</b>
+  <%= @course.semester %>
+</p>
+
+<p>
+  <b>People in Class:</b>
+  <% @course.users.each do |user| %>
+    <%= link_to user.name, profile_path(user.id) %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

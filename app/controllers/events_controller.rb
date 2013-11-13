@@ -110,5 +110,6 @@ class EventsController < ApplicationController
   end
 
   def calendar
+    @events = Event.where("status = :status", {status: "Publish"})
   end
 end

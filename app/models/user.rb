@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
 
-  has_many :course
+  has_many :courses
   has_and_belongs_to_many :events
 
   devise :database_authenticatable, :registerable,

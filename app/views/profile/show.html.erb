@@ -6,15 +6,18 @@
         <% if current_user.has_paid? %>
           <i class="icon-star" style="color: #e3cf7a"></i>
         <% else %>
-          <%= link_to("Pay Dues", dues_path, :class => "btn btn-success") if current_user == @user %> </h1>
-      <% end %>
-      <%= link_to("Edit", edit_user_registration_path, :class => "btn btn-primary") if current_user == @user %>
+          <%= link_to("Pay Dues", dues_path, :class => "btn btn-success") if current_user == @user %> <% end %>
+        <%= link_to("Edit", edit_user_registration_path, :class => "btn btn-primary") if current_user == @user %>
+      </h1>
       <hr>
     </div>
   </div>
   <div class="row">
     <div class="span8 offset1">
-      <h1>Courses <%= link_to("Add", "#", :class => "btn btn-primary") %></h1>
+      <h1>Courses <%= link_to("Add", new_course_path, :class => "btn btn-primary") %></h1>
+      <% @courses.each do |c| %>
+        <%= link_to c.name, c %>
+      <% end %>
     </div>
     <div class="span4">
       <% if current_user == @user %>

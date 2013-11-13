@@ -1,0 +1,446 @@
+
+
+/* support
+---------------------------------------------------------*/
+
+.support-section {
+	margin: 2.2em 0 3.2em;
+	}
+	
+.support-section h2 {
+	margin-bottom: .7em;
+	}
+	
+.support-section form {
+	display: inline;
+	}
+	
+.support-section input {
+	vertical-align: middle;
+	margin: 0;
+	padding: 5px 5px 0;
+	height: 20px;
+	border: 1px solid #D8DCDF;
+	border-right: 0;
+	}
+	
+.support-section input.hint {
+	color: #666;
+	}
+	
+.support-section button {
+	vertical-align: middle;
+	margin: 0;
+	padding: 0 5px;
+	height: 27px;
+	cursor: pointer;
+	}
+	
+.support-section form button { /* search buttons */
+	padding: 0 3px;
+	}
+	
+.support-section .or {
+	margin: 0 5px;
+	}
+	
+.support-section .requires-account {
+	color: #666;
+	font-size: 10px;
+	margin-left: 5px;
+	}
+	
+.support-section ul {
+	margin: 1em 0;
+	padding: 0 0 0 2em;
+	}
+	
+.support-section li {
+	margin: .4em 0;
+	}
+	
+	
+	
+	
+/* source
+-----------------------------------------------------*/
+
+.fc-wiki-content h2 {
+	margin: 1.5em 0 1em;
+	}
+
+.fc-wiki-content ul {
+	margin: 1em 0;
+	padding: 0 0 0 3em;
+	}
+
+.fc-wiki-content li {
+	margin: 1em 0;
+	}
+
+
+
+
+/* download page
+-----------------------------------------------------*/
+
+.download-option {
+	margin: 0 0 4em;
+	}
+
+.download-option code {
+	background: #F2F2F2;
+	border-color: #ddd;
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	font-size: 13px;
+	padding: 0 1px;
+	}
+
+.download-option code.block {
+	display: block;
+	margin: 1.2em 0;
+	padding: .5em;
+	border-width: 1px;
+	font-size: 1em;
+	}
+	
+
+
+
+/**************************************** DOCS **********************************************/
+
+
+/* global styles
+-----------------------------------------------------*/
+
+#fc-docs {
+	font-size: 14px;
+	}
+	
+#fc-docs a {
+	color: #000;
+	}
+	
+#fc-docs table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	}
+	
+#fc-docs td {
+	padding: 0;
+	vertical-align: top;
+	}
+	
+#fc-docs h1 {
+	font-size: 22px;
+	}
+	
+#fc-docs h2 {
+	font-size: 18px;
+	}
+	
+	
+/* global toc & list icons
+------------------------------------------------------*/
+
+#fc-docs ul.toc ul a,
+#fc-docs-index ul.toc a,
+#fc-docs dl.toc a {
+	padding: 0 0 0 26px;
+	background: url(../images/gear-small.png) no-repeat 0 50%;
+	font-weight: normal;
+	}
+	
+#fc-docs .toc .article a {
+	background-image: url(../images/information-small-white.png);
+	}
+	
+#fc-docs .toc .callback a {
+	background-image: url(../images/exclamation-small.png);
+	}
+	
+#fc-docs .toc .method a,
+#fc-docs .toc .function a {
+	background-image: url(../images/wand-small.png);
+	}
+	
+#fc-docs .toc em {
+	color: #666;
+	font-size: 11px;
+	}
+	
+	
+	
+/* index
+------------------------------------------------------*/
+
+#fc-docs-index {
+	font-size: 13px;
+	}
+
+#fc-docs-index-layout {
+	width: 100%;
+	}
+	
+#fc-docs-index h1 {
+	margin-top: .8em;
+	font-size: 18px;
+	}
+	
+#fc-docs-index ul {
+	margin: .5em 0 1.5em;
+	padding: 0;
+	list-style: none;
+	}
+	
+#fc-docs-index-layout li {
+	margin: .6em 0;
+	}
+	
+#fc-docs-index-layout li a {
+	text-decoration: none;
+	}
+	
+#fc-docs-index-layout li a:hover {
+	text-decoration: underline;
+	}
+	
+	
+#fc-docs-index-removed h2 {
+	margin-top: 0;
+	}
+	
+#fc-docs-index-removed ul.toc li {
+	float: left;
+	margin: 0 .5em .3em 0;
+	}
+	
+#fc-docs-index-removed ul.toc li a {
+	background: none;
+	padding: 0;
+	}
+	
+	
+	
+/* normal articles
+------------------------------------------------------*/
+
+#fc-docs-layout {
+	width: 100%;
+	position: relative;
+	}
+	
+	
+/* sidebar */
+
+#fc-docs-sidebar {
+	font-size: 13px;
+	width: 202px;
+	border-right: 1px solid #D5D5D5;
+	}
+
+#fc-docs-sidebar a {
+	text-decoration: none;
+	}
+	
+#fc-docs-sidebar a:hover {
+	text-decoration: underline;
+	}
+	
+#fc-docs-sidebar ul {
+	margin: 1em 0;
+	padding: 0;
+	list-style: none;
+	}
+	
+#fc-docs-sidebar ul ul {
+	margin: .5em 0 1.5em 5px;
+	}
+	
+#fc-docs-sidebar li {
+	margin: -4px 0 -4px -10px;
+	padding: 0 0 0 10px;
+	line-height: 30px;
+	white-space: nowrap;
+	}
+	
+#fc-docs-sidebar li.current {
+	background: url(../images/current_nav_bg.png) no-repeat top left;
+	margin-right: -1px;
+	}
+	
+#fc-docs-sidebar[id] li.current {
+	position: relative;
+	}
+	
+#fc-docs-sidebar li a {
+	font-weight: bold;
+	}
+	
+	
+/* content */
+	
+#fc-docs #fc-docs-content {
+	padding-left: 30px;
+	}
+	
+#fc-docs-content a {
+	color: #400000;
+	}
+	
+#fc-docs-content dl.toc {
+	margin: 1.5em 0;
+	}
+	
+#fc-docs-content dl.toc dt {
+	margin: 1.1em 0 .5em;
+	padding: 0;
+	}
+	
+#fc-docs-content dl.toc dd {
+	margin: .5em 0 1.1em 26px;
+	padding: 0;
+	font-size: 11px;
+	}
+	
+	
+	
+#fc-docs-content h1 em {
+	position: relative;
+	left: 3px;
+	top: -3px;
+	border: 1px solid #ccc;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	color: #666;
+	}
+	
+	
+	
+#fc-docs code {
+	background: #F2F2F2;
+	border-bottom: 1px solid #ddd;
+	font-size: 12px;
+	}
+	
+#fc-docs pre code {
+	background: none;
+	border: 0;
+	}
+	
+#fc-docs pre {
+	background: #F2F2F2;
+	border: 1px solid #ddd;
+	margin: 1.2em 0;
+	padding: .5em;
+	}
+	
+	
+	
+#fc-docs .spec {
+	background: #E0ECFF;
+	border: 1px solid #A5C9FF;
+	margin: 1.2em 0;
+	padding: .5em;
+	}
+	
+#fc-docs .spec p {
+	margin: 0;
+	font-family: Monaco,Consolas,"Lucida Console",monospace;
+	font-size: 12px;
+	}
+	
+#fc-docs .spec p em {
+	font-family: Consolas,"Andale Mono WT","Andale Mono","Lucida Console",Monaco,"Courier New",Courier,monospace;
+	}
+	
+#fc-docs .spec pre {
+	margin: .5em 0 0 0;
+	}
+	
+	
+	
+#fc-docs-content dl {
+	margin: 1em 0 1em 2em;
+	}
+	
+#fc-docs-content dt {
+	margin: .8em 0 .3em;
+	}
+	
+#fc-docs-content dd {
+	margin: .3em 0 .8em 2em;
+	}
+	
+	
+	
+#fc-docs-content ul {
+	margin: 1em 0 1em 3em;
+	padding: 0;
+	}
+	
+#fc-docs-content li {
+	margin: .7em 0;
+	}
+	
+	
+	
+#fc-docs .version-info {
+	margin-top: 3.5em;
+	font-size: 12px;
+	}
+	
+#fc-docs .version-info,
+#fc-docs .version-info a {
+	color: #666;
+	}
+	
+#fc-docs .removed-notice {
+	margin: 1.2em 0;
+	padding: .5em;
+	background: #FF9570;
+	border: 1px solid #CB4E22;
+	}
+	
+#fc-docs .removed-notice p {
+	margin: 0;
+	}
+	
+
+
+#fc-docs .new {
+	color: red;
+	font-size: 10px;
+	vertical-align: top;
+	font-weight: normal;
+	}
+
+
+	
+#fc-docs-content table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	}
+	
+#fc-docs-content table td,
+#fc-docs-content table th {
+	text-align: left;
+	border: 1px solid #E4E4E4;
+	padding: 7px 10px;
+	vertical-align: top;
+	}
+	
+#fc-docs-content table th {
+	background: #eee;
+	border-color: #ddd;
+	}
+	
+#fc-docs-content table td p {
+	margin: 0 0 .5em;
+	}
+	
+	
+	
