@@ -14,6 +14,14 @@
   </div>
   <div class="row">
     <div class="span8 offset1">
+      <% if current_user == @user %>
+        <h1>Events Attended</h1>
+        <% @user.events.each do |e| %>
+          <h3> <%= link_to e.title, e %> </h3>
+        <% end %>
+        <hr>
+      <% end %>
+
       <h1>Courses <%= link_to("Add", new_course_path, :class => "btn btn-primary") %></h1>
       <% @courses.each do |c| %>
         <%= link_to c.name, c %>
