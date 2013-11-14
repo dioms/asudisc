@@ -4,7 +4,7 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.order("created_at ASC").all
+    @jobs = Job.where("end_date >= :date", {date: 1.day.ago}).order("created_at ASC").all
 
     respond_to do |format|
       format.html # index.html.erb
