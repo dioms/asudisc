@@ -1,7 +1,7 @@
 <% if @published_events.present? %>
   <% @published_events.asc.each do |event| %>
     <div class="<%= event.event_type.parameterize %>">
-    <h3><%= link_to event.title, event %></h3>
+      <h3><%= link_to event.title, event %> <small><%= event.event_type %></small></h3>
     </div>
     <b>When:</b> <%= time_tag event.date %> <br />
     <b>What time:</b><%= event.start_time.strftime("%I:%M %p") %> -
