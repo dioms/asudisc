@@ -13,11 +13,11 @@
   <%= f.label :resume %>
   <%= f.file_field :resume %>
 
-  Check if you want a name tag
+  Un-Check if you don't want a name tag
   <%= f.check_box :name_tag %>
   
   <br>
-  Check if you're ok with the name <b><%= resource.full_name %></b> on your name tag
+  Un-Check if you're not ok with the name <b><%= resource.full_name %></b> on your name tag
   <%= f.check_box :ok_name %>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
