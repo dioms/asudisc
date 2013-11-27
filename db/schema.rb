@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131121173006) do
+ActiveRecord::Schema.define(:version => 20131127195839) do
 
   create_table "courses", :force => true do |t|
     t.string   "subject"
@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(:version => 20131121173006) do
     t.text     "requirements"
     t.string   "company_url"
     t.text     "company_description"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-    t.date     "end_date"
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+    t.date     "end_date",            :default => '2014-01-26'
   end
 
   create_table "notifications", :force => true do |t|
