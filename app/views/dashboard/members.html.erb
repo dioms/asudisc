@@ -12,13 +12,10 @@
   <h1> Event graduation breakdown <h1>
       <% @general_meetings.asc.each do |meeting| %>
         <% unless meeting.users.empty? %>
-        <h3> <%= meeting.title %> </h3>
+          <h3> <%= meeting.title %> <%= meeting.users.count %> </h3>
         <%= pie_chart meeting.users.group("graduation").count %>
         <% end %>
       <% end %>
-
-  
-
 
 </div>
 </section>
