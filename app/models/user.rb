@@ -22,12 +22,18 @@ class User < ActiveRecord::Base
   end
 
   def full_name
-    "#{first_name} #{last_name}"
+    "#{first_name.capitalize} #{last_name.capitalize}"
   end
 
   def attend(event)
     return false if self.nil?
     return true if self.events << event
   end
+
+  def self.find_by_full_name(name)
+    first, last = name.split(" ")
+    all.select { |u| u.first_name.downcase == first.downcase && u.last_name.downcase == last.downcase }
+  end
+
 
 end
