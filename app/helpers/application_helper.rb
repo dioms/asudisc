@@ -3,9 +3,9 @@ module ApplicationHelper
     result = []
     part_of_year = ['Spring', 'Summer', 'Fall']
     start_year.upto(end_year) do | year|
-    part_of_year.each do |part|
-      result << "#{part} #{year}"
-    end
+      part_of_year.each do |part|
+        result << "#{part} #{year}"
+      end
     end
     result
   end
