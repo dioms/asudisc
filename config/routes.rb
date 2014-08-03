@@ -1,4 +1,9 @@
 Asudisc::Application.routes.draw do
+  get "reports/dues_report"
+  get "reports/attendance_report"
+  get "reports/recently_registered"
+  match "/reports", :to => 'reports#index'
+
   resources :blog_posts
   resources :notifications
   get "dashboard/members"
