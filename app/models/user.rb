@@ -12,7 +12,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :admin, :first_name, :last_name, :graduation, :has_paid, :resume, :name_tag, :ok_name
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :admin, :first_name, :last_name,
+                  :graduation, :has_paid, :resume, :name_tag, :ok_name, :shirt_size
 
   validates_uniqueness_of :email
   validates_format_of :email, :with => /\A([^@\s]+)@((?:asu+\.)+edu)\Z/i, :on => :create, :message => "Must be a valid asu email address"

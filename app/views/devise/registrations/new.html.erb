@@ -8,6 +8,8 @@
   <!-- calls expected_graduation() which is in the application helper in order to populate the list of expected graduation dates.-->
   <h5>Expected Graduation</h5>
   <%= select(:user, :graduation, expected_graduation(2014, 2019), {:include_blank => true} ) %>
+  <h5>Shirt Size</h5>
+  <%= select(:user, :shirt_size, ["S", "M", "L", "XL", "XXL"], {:include_blank => true} ) %>
 
   <div><%= f.submit "Register", :class => "btn btn-large btn-primary" %></div>
 <%= render "devise/shared/links" %>
