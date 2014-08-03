@@ -13,11 +13,11 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :admin, :first_name, :last_name,
-                  :graduation, :has_paid, :resume, :name_tag, :ok_name, :shirt_size
+                  :graduation, :has_paid, :resume, :name_tag, :ok_name, :shirt_size, :gender
 
   validates_uniqueness_of :email
   validates_format_of :email, :with => /\A([^@\s]+)@((?:asu+\.)+edu)\Z/i, :on => :create, :message => "Must be a valid asu email address"
-  validates_presence_of :first_name, :last_name, :graduation
+  validates_presence_of :first_name, :last_name, :graduation, :shirt_size, :gender
 
   def admin?
     self.admin
