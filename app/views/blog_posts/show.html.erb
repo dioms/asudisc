@@ -1,0 +1,13 @@
+<div class="container">
+  <br />
+  <p id="notice"><%= notice %></p>
+
+  <h1> <%= @blog_post.title %> <small> <%= @blog_post.user.full_name %> - <%= @blog_post.created_at.strftime("%b %e") %> </small> </h1>
+
+<div class="well">
+  <%= @blog_post.content %>
+</div>
+
+<%= link_to 'Edit', edit_blog_post_path(@blog_post) if current_user.try(:admin?) %> <br />
+<%= link_to 'Back', blog_posts_path, :class => "btn btn-primary" %> <br /> <br />
+</div>

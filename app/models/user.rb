@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
 
   has_many :courses
+  has_many :blog_posts
   has_and_belongs_to_many :events
 
   devise :database_authenticatable, :registerable,
@@ -21,8 +22,16 @@ class User < ActiveRecord::Base
     self.admin
   end
 
+  def capitalize_hyphenated(last_name)
+    if last_name.include? "-"
+      last_name.split("-").map(&:capitalize).join("-")
+    else
+      last_name.capitalize
+    end
+  end
+
   def full_name
-    "#{first_name.capitalize} #{last_name.capitalize}"
+    "#{first_name.capitalize} #{capitalize_hyphenated(last_name)}"
   end
 
   def attend(event)
@@ -34,6 +43,5 @@ class User < ActiveRecord::Base
     first, last = name.split(" ")
     all.select { |u| u.first_name.downcase == first.downcase && u.last_name.downcase == last.downcase }
   end
-
 
 end

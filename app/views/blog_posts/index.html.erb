@@ -1,0 +1,19 @@
+<div class="container">
+<h1>Blog</h1>
+
+<%= link_to('New Blog Post', new_blog_post_path, :class => "btn btn-primary") if current_user.try(:admin?) %></h1>
+
+<% if @blog_posts.present? %>
+<% @blog_posts.each do |blog_post| %>
+    <h2><%= link_to blog_post.title, blog_post %> <small> <%= blog_post.user.full_name %> - <%= blog_post.created_at.strftime("%b %e") %> 
+    <%= link_to 'Edit', edit_blog_post_path(blog_post) if current_user.try(:admin?) %></td>
+    <%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' } if current_user.try(:admin?) %></td>
+    </small> </h2>
+  <div class="well">  <%= truncate(blog_post.content, length: 150) %></div>
+  </tr>
+<% end %>
+<% end %>
+
+<br />
+<br />
+</div>

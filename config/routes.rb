@@ -1,7 +1,6 @@
 Asudisc::Application.routes.draw do
+  resources :blog_posts
   resources :notifications
-
-
   get "dashboard/members"
 
   match '/payment_notification', :to => 'payment_notifications#create'
