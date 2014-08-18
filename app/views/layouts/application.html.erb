@@ -1,56 +1,48 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8] -->
-<html lang="en">
-  <!-- <![endif] -->
-  <head>
-  <meta charset="utf-8" />
-  <!-- %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"} -->
-  <title>ASU Department of Information Systems Club</title>
-  <meta content="Airzona State University Department of Information Systems Club" name="description" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+<html>
+<head>
+        <title>ASU Department of Information Systems Club</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <!-- Styles -->
     <%= stylesheet_link_tag    "application-all", :media => "all" %>
     <%= stylesheet_link_tag    "application-main", :media => "main" %>
-    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 </head>
-  <body class="theme-pattern-subtle-grey">
-    <!-- Page Header -->
-    <header id="masthead">
-      <nav class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-          <div class="container">
-            <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+<body style="padding-top: 0px;">
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </a>
-            <h1 class="brand">
-              <%= link_to "ASUDISC", root_path %>
-            </h1>
+            <a class="brand" href="/">
+                <strong>ASUDISC</strong>
+            </a>
             <div class="nav-collapse collapse">
-              <ul class="nav pull-right">
-                <li class=""> <%= link_to "About Us", about_path %> </li>
-                <li class=""> <%= link_to "Calendar", events_path %> </li>
-                <li class=""><%= link_to 'Post a Job', new_job_path unless current_user %>  </li>
-                <li class=""><%= link_to 'Jobs', jobs_path if current_user %>  </li>
-                <li class=""><%= link_to 'Members', members_path if current_user %> </li>
-                <li class=""><%= link_to 'Blog', blog_posts_path %> </li>
-                <li class=""><%= link_to 'Reports', reports_path %> </li>
+                <ul class="nav pull-right">
+                <li class=""> <%= link_to "ABOUT US", about_path %> </li>
+                <li class=""> <%= link_to "CALENDAR", events_path %> </li>
+                <li class=""><%= link_to 'POST A JOB', new_job_path unless current_user %>  </li>
+                <li class=""><%= link_to 'JOBS', jobs_path if current_user %>  </li>
+                <li class=""><%= link_to 'MEMBERS', members_path if current_user %> </li>
+                <li class=""><%= link_to 'BLOG', blog_posts_path %> </li>
+                <li class=""><%= link_to 'REPORTS', reports_path if current_user.try(:admin?) %> </li>
                 <%= render "devise/menu/registration_items" %>
                 <%= render "devise/menu/login_items" %>
-              </ul>
+                </ul>
             </div>
-          </div>
         </div>
-      </nav>
-    </header>
-    <!-- Main Content -->
+      </div>
+    </div>
+
     <div id="content" role="main">
       <% unless defined?(resource).nil? %>
       <section class="section">
@@ -73,40 +65,98 @@
       <% end %>
         <%= yield %>
     </div>
-    <!-- Page Footer -->
-    <footer class="section" id="footer" role="contentinfo">
-      <div class="container">
-        <div class="row-fluid">
-          <div class="span6">
-            <h3>Contact us</h3>
-            <p>
-            If you have any questions about ASU DISC or any of our events please don't hesitate to contact us and we will reply as soon as possible.
-            </p>
-            <ul class="icons">
-              <li>
-                <i class="icon-envelope"></i>
-                <a href="mailto:asudisc@gmail.com">asudisc</a>
-              </li>
-              <li>
-                <i class="icon-twitter"></i>
-                <a href="http://twitter.com/asudisc/" target="_blank">@asudisc</a>
-              </li>
-              <li>
-                <i class="icon-facebook"></i>
-                <a href="https://www.facebook.com/pages/Department-of-Information-Systems-Club/592326780777384" target="_blank">disc</a>
-              </li>
-            </ul>
-          </div>
+
+
+    <!-- starts footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row sections">
+                <div class="span4 recent_posts">
+                    <h3 class="footer_header">
+                        Recent Posts
+                    </h3>
+                    <div class="post">
+                        <a href="blogpost.html">
+                            <img src="/assets/recent_post1.png" class="img-circle" />
+                        </a>
+                        <div class="date">
+                            Wed, 12 Dec
+                        </div>
+                        <a href="blogpost.html" class="title">
+                            Randomised words which don't look embarrasing hidden.
+                        </a>
+                    </div>
+                    <div class="post">
+                        <a href="blogpost.html">
+                            <img src="/assets/recent_post2.png" class="img-circle" />
+                        </a>
+                        <div class="date">
+                            Mon, 12 Dec
+                        </div>
+                        <a href="blogpost.html" class="title">
+                            Randomised words which don't look embarrasing hidden.
+                        </a>
+                    </div>
+                </div>
+                <div class="span4 testimonials">
+                    <h3 class="footer_header">
+                        Testimonials
+                    </h3>
+                    <div class="wrapper">
+                        <div class="quote">
+                            <span>“</span>
+                            There are many variations of passages of randomised words which don't look even slightly believable. You need to be sure there isn't anything embarrassing of text.
+                            <span></span>
+                        </div>
+                        <div class="author">
+                            <img src="/assets/user-display.png" />
+                            <div class="name">Alejandra Galvan Castillo</div>
+                            <div class="info">
+                                Details Canvas
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span4 contact">
+                    <h3 class="footer_header">
+                        Contact
+                    </h3>
+                    <form action="#" method="post">
+                        <input type="text" placeholder="Your name" />
+                        <input type="text" placeholder="Your email" />
+                        <textarea rows="3" placeholder="Message"></textarea>
+                        <input type="submit" value="Send" />
+                    </form>
+                </div>
+            </div>
+            <div class="row credits">
+                <div class="span12">
+                    <div class="row social">
+                        <div class="span12">
+                            <a href="https://www.facebook.com/pages/Department-of-Information-Systems-Club/592326780777384" class="facebook">
+                                <span class="socialicons ico1"></span>
+                                <span class="socialicons_h ico1h"></span>
+                            </a>
+                    </div>
+                    <div class="row copyright">
+                        <div class="span12">
+                            © 2013 ASU DISC. All rights reserved.
+                        </div>
+                    </div>
+                </div>            
+            </div>
+        </div>
     </footer>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-43477639-1', 'asudisc.org');
-      ga('send', 'pageview');
-
-    </script>
+    <!-- Scripts -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/assets/calendar/jquery-ui.custom.min.js"></script>
+    <%=javascript_include_tag "application" %>
+    <script src="/assets/bootstrap.min.js"></script>
+    <script src="/assets/theme.js"></script>
+    <script src="/assets/flexslider.js"></script>
+    <script src="/assets/index-slider.js"></script>
+    <script src="/assets/index-slider.js"></script>
+    <script src="/assets/calendar/fullcalendar.min.js"></script>
 </body>
 </html>

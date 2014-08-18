@@ -13,6 +13,10 @@
  *= require_tree .
  */
 
+.container {
+  margin-top: 100px;
+}
+
 .site-tour h3 a {
   color: green;
 }
@@ -25,24 +29,8 @@
   color: red;
 }
 
-.content {
-  padding-top: 20px;
-}
-
 .alert {
   margin-bottom: 20px;
-}
-
-.executiveteam {
-  font-size: 18px;
-}
-
-.navbar-inner {
-  background-color: #ffcb66
-}
-
-.navbar.navbar-fixed-top {
-  border-bottom: 4px solid #903;
 }
 
 .form-signin {

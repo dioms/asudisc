@@ -1,7 +1,9 @@
 class NavigationController < ApplicationController
+
   def index
     @events = Event.last(3).reverse
     @notification = Notification.last
+    render layout: false
   end
 
   def jobs
