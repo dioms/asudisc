@@ -8,6 +8,7 @@
     <!-- Styles -->
     <%= stylesheet_link_tag    "application-all", :media => "all" %>
     <%= stylesheet_link_tag    "application-main", :media => "main" %>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <%= csrf_meta_tags %>
 
     <!--[if lt IE 9]>
@@ -29,6 +30,7 @@
             <div class="nav-collapse collapse">
                 <ul class="nav pull-right">
                 <li class=""> <%= link_to "ABOUT US", about_path %> </li>
+                <li class=""> <%= link_to "BOARD MEMBERS", executive_team_path %> </li>
                 <li class=""> <%= link_to "CALENDAR", events_path %> </li>
                 <li class=""><%= link_to 'POST A JOB', new_job_path unless current_user %>  </li>
                 <li class=""><%= link_to 'JOBS', jobs_path if current_user %>  </li>
@@ -133,12 +135,19 @@
                 <div class="span12">
                     <div class="row social">
                         <div class="span12">
-                            <a href="https://www.facebook.com/pages/Department-of-Information-Systems-Club/592326780777384" class="facebook">
-                                <span class="socialicons ico1"></span>
-                                <span class="socialicons_h ico1h"></span>
-                            </a>
                     </div>
                     <div class="row copyright">
+                            <a href="https://www.facebook.com/pages/Department-of-Information-Systems-Club/592326780777384">
+                                    <img src="/assets/facebook.png" />
+                            </a>
+                            <a href="https://twitter.com/ASUDISC">
+                                    <img src="/assets/twitter.png" />
+                            </a>
+                            <a href="mailto:asudisc@gmail.com">
+                                    <img src="/assets/email.png" />
+                            </a>
+                            <br />
+                            <br />
                         <div class="span12">
                             © 2013 ASU DISC. All rights reserved.
                         </div>
