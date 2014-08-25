@@ -73,33 +73,21 @@
     <footer id="footer">
         <div class="container">
             <div class="row sections">
-                <div class="span4 recent_posts">
+                <div class="recent_posts">
                     <h3 class="footer_header">
-                        Recent Posts
-                    </h3>
-                    <div class="post">
-                        <a href="blogpost.html">
-                            <img src="/assets/recent_post1.png" class="img-circle" />
-                        </a>
-                        <div class="date">
-                            Wed, 12 Dec
-                        </div>
-                        <a href="blogpost.html" class="title">
-                            Randomised words which don't look embarrasing hidden.
-                        </a>
-                    </div>
-                    <div class="post">
-                        <a href="blogpost.html">
-                            <img src="/assets/recent_post2.png" class="img-circle" />
-                        </a>
-                        <div class="date">
-                            Mon, 12 Dec
-                        </div>
-                        <a href="blogpost.html" class="title">
-                            Randomised words which don't look embarrasing hidden.
-                        </a>
-                    </div>
+                        Recent Blog Posts
+                                        </h3>
+                                        <% BlogPost.last(2).each do |bp| %>
+                                        <div class="post">
+                                        <h4><%= bp.title %>
+                                        <small>  <%= "Published #{time_ago_in_words(bp.created_at)} ago" %> </small>
+                                        </h4>
+                                        <%# link_to (image_tag "recent_post1.png"), blog_post_path(bp) %>
+                                        <%= link_to bp.content.split(" ")[0..20].join(" "), blog_post_path(bp), class: "title" %>
+                                        </div>
+                                        <% end %>
                 </div>
+                <!--
                 <div class="span4 testimonials">
                     <h3 class="footer_header">
                         Testimonials
@@ -130,6 +118,7 @@
                         <input type="submit" value="Send" />
                     </form>
                 </div>
+                -->
             </div>
             <div class="row credits">
                 <div class="span12">

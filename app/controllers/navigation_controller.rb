@@ -3,6 +3,7 @@ class NavigationController < ApplicationController
   def index
     @events = Event.last(3).reverse
     @notification = Notification.last
+    @blog_posts = BlogPost.last(2)
     render layout: false
   end
 

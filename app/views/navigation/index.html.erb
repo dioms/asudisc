@@ -66,6 +66,11 @@
                                 </section>
                         <% end %>
                         <section id="feature_slider" class="">
+                        <style>
+                                img.asset {
+                                        border-radius: 5px;
+                                }
+                        </style>
                         <!-- 
                         Each slide is composed by <img> and .info
                         - .info's position is customized with css in index.css
@@ -80,20 +85,27 @@
 
                         For the backgrounds, you can combine from the bgs folder :D
                         -->
-                        <article class="slide" id="showcasing" style="background: url('assets/backgrounds/landscape.png') repeat-x top center;">
-                        <img class="asset left-30 sp600 t120 z1" src="assets/slides/scene1/macbook.png" />
+                        <article class="slide" id="showcasing" style="background: url('/assets/backgrounds/indigo.jpg') repeat-x top center;">
+                        <img class="asset left-30 sp600 t120 z1" src="/assets/ais_conf.jpg" height="700" width="500" />
                         <div class="info">
-                                <h2>Beautiful theme for showcasing your works.</h2>
+                                <center>
+                                <h2>Join Today!</h2>
+                                <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-large btn-warning" %>
+                                </center>
                         </div>
                         </article>
-                        <article class="slide" id="ideas" style="background: url('assets/backgrounds/aqua.jpg') repeat-x top center;">
+                        <article class="slide" id="ideas" style="background: url('assets/backgrounds/mango.jpg') repeat-x top center;">
                         <div class="info">
-                                <h2>We love to turn ideas into beautiful things.</h2>
+                                <h2>Come and learn with us!</h2>
                         </div>
+                        <img class="asset left-300 sp600 t190 z2" src="/assets/amex_event.jpeg" height="800" width="680" />
+                        <!--
                         <img class="asset left-480 sp600 t260 z1" src="assets/slides/scene2/left.png" />
                         <img class="asset left-210 sp600 t213 z2" src="assets/slides/scene2/middle.png" />
                         <img class="asset left60 sp600 t260 z1" src="assets/slides/scene2/right.png" />
+                        -->
                         </article>
+                        <!--
                         <article class="slide" id="tour" style="background: url('assets/backgrounds/color-splash.jpg') repeat-x top center;">
                         <img class="asset left-472 sp650 t210 z3" src="assets/slides/scene3/ipad.png" />
                         <img class="asset left-365 sp600 t270 z4" src="assets/slides/scene3/iphone.png" />
@@ -114,6 +126,7 @@
                                 </h2>                
                         </div>
                         </article>        
+                        -->
                         </section>
                         <div id="content" role="main">
                                 <section class="section alt" id="promo">
@@ -160,8 +173,8 @@
                                                                         <span>Develop</span>
                                                                 </div>
                                                                 <div class="circle last_circle">
-                                                                        <img src="/assets/design.png" />
-                                                                        <span>Design</span>
+                                                                        <img src="/assets/cutlery.png" />
+                                                                        <span>Food</span>
                                                                 </div>
                                                         </div>
                                                 </div>
@@ -214,33 +227,21 @@
                 <footer id="footer">
                 <div class="container">
                         <div class="row sections">
-                                <div class="span4 recent_posts">
+                                <div class="recent_posts">
                                         <h3 class="footer_header">
-                                                Recent Posts
+                                                Recent Blog Posts
                                         </h3>
+                                                <% @blog_posts.each do |bp| %>
                                         <div class="post">
-                                                <a href="blogpost.html">
-                                                        <img src="assets/recent_post1.png" class="img-circle" />
-                                                </a>
-                                                <div class="date">
-                                                        Wed, 12 Dec
-                                                </div>
-                                                <a href="blogpost.html" class="title">
-                                                        Randomised words which don't look embarrasing hidden.
-                                                </a>
+                                                <h4><%= bp.title %>
+                                                        <small>  <%= "Published #{time_ago_in_words(bp.created_at)} ago" %> </small>
+                                                </h4>
+                                                <%# link_to (image_tag "recent_post1.png"), blog_post_path(bp) %>
+                                                <%= link_to bp.content.split(" ")[0..20].join(" "), blog_post_path(bp), class: "title" %>
                                         </div>
-                                        <div class="post">
-                                                <a href="blogpost.html">
-                                                        <img src="assets/recent_post2.png" class="img-circle" />
-                                                </a>
-                                                <div class="date">
-                                                        Mon, 12 Dec
-                                                </div>
-                                                <a href="blogpost.html" class="title">
-                                                        Randomised words which don't look embarrasing hidden.
-                                                </a>
-                                        </div>
+                                <% end %>
                                 </div>
+                                <!--
                                 <div class="span4 testimonials">
                                         <h3 class="footer_header">
                                                 Testimonials
@@ -271,6 +272,7 @@
                                                 <input type="submit" value="Send" />
                                         </form>
                                 </div>
+                                -->
                         </div>
                         <div class="row credits">
                                 <div class="span12">
