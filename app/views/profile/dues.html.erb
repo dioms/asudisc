@@ -1,27 +1,63 @@
-<section class="section" role="main">
-<div class="container">
-  <div class="page-header">
-    <h1>Become a Member</h1>
-  </div>
-  <div class="row">
-    <div class="span8">
-      Benefits Include:
-      <ul> 
-        <li>Site Tours</li>
-        <li>DISC T-Shirt</li>
-        <li>Have your profile added to the resume book</li>
-        <li>Business Cards</li>
-        <li>Ability to put "DISC member" on your resume.</li>
-      </ul>
-    </div>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-      <input type="hidden" name="cmd" value="_s-xclick">
-      <input type="hidden" name="invoice" value="<%= current_user.id + 2000 %>">
-      <input type="hidden" name="hosted_button_id" value="TY6HJJL6KZGBA">
-      <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-      <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </form>
-  </div>
-  </div>
+<div id="in_pricing">
+        <div class="container">
+                <div class="head">
+                        <h3>Become a Member!</h3>
+                </div>
+                <div class="row charts_wrapp">
+                        <!-- Plan Box -->
+                        <div class="span4 offset2">
+                                <div class="plan">
+                                        <div class="wrapper">
+                                                <h3>Pay per Semester</h3>
+                                                <div class="price">
+                                                        <span class="dollar">$</span> 
+                                                        <span class="qty">30</span> 
+                                                        <span class="month">/semester</span>
+                                                </div>
+                                                <div class="features">
+                                                        <p>Site Tours</p>
+                                                        <p>DISC T-Shirt</p>
+                                                        <p>Ability to put "DISC member" on your resume.</p>
+                                                </div>
+                                                <br />
+                                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                                        <input type="hidden" name="cmd" value="_s-xclick">
+                                                        <input type="hidden" name="invoice" value="<%= current_user.id + 2000 %>">
+                                                        <input type="hidden" name="hosted_button_id" value="TY6HJJL6KZGBA">
+                                                        <!--   <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"> -->
+                                                        <a class="order" href="#" onclick="$(this).closest('form').submit()">ORDER NOW</a>
+                                                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                                </form>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="span4">
+                                <div class="plan">
+                                        <div class="wrapper">
+                                                <h3>Pay per Year</h3>
+                                                <div class="price">
+                                                        <span class="dollar">$</span> 
+                                                        <span class="qty">25</span> 
+                                                        <span class="month">/semester</span>
+                                                </div>
+                                                <div class="features">
+                                                        <p>Site Tours</p>
+                                                        <p>DISC T-Shirt</p>
+                                                        <p>Ability to put "DISC member" on your resume.</p>
+                                                </div>
+                                                <br />
+                                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                                        <input type="hidden" name="cmd" value="_s-xclick">
+                                                        <input type="hidden" name="invoice" value="<%= current_user.id + 2000 %>">
+                                                        <input type="hidden" name="hosted_button_id" value="FKK75L7UAMXW4">
+                                                        <!--   <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"> -->
+                                                        <a class="order" href="#" onclick="$(this).closest('form').submit()">ORDER NOW</a>
+                                                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                                </form>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
 </div>
-</section>
+</div>
