@@ -2,7 +2,7 @@
 <% if @events.present? %>
   <% @events.each do |event| %>
   <div class="event">
-          <h2><%= link_to event.title, event %> <small><%= event.event_type %></small> </h2>
+          <h2><%= link_to event.title, event %> <small><%= event.event_type %> <%= event.users.count %> attended</small> </h2>
     <b>When:</b> <%= time_tag event.date %> <%= button_tag "Show/Hide", class: "btn btn-warning"  %><br />
     <div class="well">
       <% event.users.each do |u| %>
