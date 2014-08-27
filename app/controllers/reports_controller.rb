@@ -5,7 +5,7 @@ class ReportsController < ApplicationController
   end
 
   def attendance_report
-    @events = Event.all
+    @events = Event.order('date DESC')
   end
 
   def recently_registered
