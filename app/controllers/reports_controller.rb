@@ -9,7 +9,7 @@ class ReportsController < ApplicationController
   end
 
   def recently_registered
-    @recently_registered = User.order('created_at DESC').limit(30)
+    @recently_registered = User.order('created_at DESC')
   end
 
   def index
