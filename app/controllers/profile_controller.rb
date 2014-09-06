@@ -9,7 +9,8 @@ class ProfileController < ApplicationController
   def show
     @user = User.find(params[:id])
     @courses = current_user.courses
-    @events = Event.order("date DESC").limit(3)
+    @events = Event.where("status = :status AND date >= :date",
+                                    {status: "Publish", date: 1.day.ago}).order("date ASC").limit(3)
     @jobs = Job.last(3)
   end
 
