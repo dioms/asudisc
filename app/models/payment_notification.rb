@@ -6,10 +6,12 @@ class PaymentNotification < ActiveRecord::Base
 
   private
   def mark_user_as_has_paid
+    puts "RUNNING"
     if status == "Completed"
       u = User.find(user_id)
       u.update_attributes(:has_paid => true)
       u.save!
+      puts "RAN"
     end
   end
 
