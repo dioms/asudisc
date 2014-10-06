@@ -1,6 +1,12 @@
 <div class="container">
   <h2>Recently Registered</h2>
-    <% @recently_registered.each do |u| %>
-      <h4><%= link_to u.full_name, profile_path(u) %> <small> <%= u.created_at.strftime("%b %e - %Y") %></small></h4>
-    <% end %>
+  <% @recently_registered.each do |u| %>
+    <h4>
+      <%= link_to u.full_name, profile_path(u) %> 
+      <small> 
+        <%= u.created_at.strftime("%b %e - %Y") %> -
+        <%= u.graduation %> 
+      </small>
+    </h4>
+  <% end %>
 </div>
