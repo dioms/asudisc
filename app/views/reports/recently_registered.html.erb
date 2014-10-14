@@ -5,7 +5,8 @@
       <%= link_to u.full_name, profile_path(u) %> 
       <small> 
         <%= u.created_at.strftime("%b %e - %Y") %> -
-        <%= u.graduation %> 
+        <%= u.graduation %>  -
+        <%= u.has_paid ? "Has Paid" : "Hasn't Paid" %>
       </small>
     </h4>
   <% end %>
