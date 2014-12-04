@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Members that have paid dues <small>Count: <%= @paying_members.count %></small></h2>
   <% @paying_members.each do |m| %>
-    <h4><%= link_to m.full_name, profile_path(m) %> <%= m.shirt_size %> </h4>
+    <h4><%= link_to m.full_name, profile_path(m) %>, <%= m.email %> </h4>
   <% end %>
 
   <h3>Paid Member Shirt Stats</h3>
