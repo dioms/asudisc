@@ -2,6 +2,7 @@ Asudisc::Application.routes.draw do
   get "reports/dues_report"
   get "reports/attendance_report"
   get "reports/recently_registered"
+  get "reports/rsvp_report"
   match "/reports", :to => 'reports#index'
 
   resources :blog_posts
@@ -17,6 +18,8 @@ Asudisc::Application.routes.draw do
   resources :courses
 
   #Events
+  post  '/events/:id/rspv/', :to => 'events#rsvp', :as => :rsvp_event
+  post  '/events/:id/remove_rspv/', :to => 'events#remove_rsvp', :as => :remove_rsvp_event
   match '/events/:id/attendance/', :to => 'events#attendance'
   match '/events/:id/attend/', :to => 'events#attend', :as => :attend_event
   match '/calendar', :to => 'events#calendar'

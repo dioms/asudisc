@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :courses
   has_many :blog_posts
+  has_many :rsvps
+  has_many :event_rsvps, through: :rsvps, source: :event
   has_and_belongs_to_many :events
 
   devise :database_authenticatable, :registerable,

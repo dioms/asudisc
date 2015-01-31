@@ -1,8 +1,18 @@
 <% if @published_events.present? %>
   <% @published_events.asc.each do |event| %>
     <div class="<%= event.event_type.parameterize %>">
-      <h3><%= link_to event.title, event %> <small><%= event.event_type %></small></h3>
-    </div>
+      <h3><%= link_to event.title, event %> <small><%= event.event_type %></small>
+    <% if event.user_rsvps.include? current_user %>
+      <%= form_tag remove_rsvp_event_path(event), class: "btn btn-link", method: :post do %>
+        <%= submit_tag "Remove RSVP" %>
+      <% end %>
+    <% else %>
+      <%= form_tag rsvp_event_path(event), class: "btn btn-link", method: :post do %>
+        <%= submit_tag "RSVP" %>
+      <% end %>
+    <% end %>
+  </h3>
+  </div>
     <b>When:</b> <%= time_tag event.date %> <br />
     <b>What time:</b><%= event.start_time.strftime("%I:%M %p") %> -
     <%= event.end_time.strftime("%I:%M %p") %> <br />

@@ -1,6 +1,15 @@
 <div class="container">
 	<br />
 	<h1> <%= @event.title %> <small> <%= @event.event_type %> </small> </h1>
+    <% if @event.user_rsvps.include? current_user %>
+      <%= form_tag remove_rsvp_event_path(@event), class: "btn btn-link", method: :post do %>
+        <%= submit_tag "Remove RSVP" %>
+      <% end %>
+    <% else %>
+      <%= form_tag rsvp_event_path(@event), class: "btn btn-link", method: :post do %>
+        <%= submit_tag "RSVP" %>
+      <% end %>
+    <% end %>
 	<hr>
 
 	<i class="icon-calendar"></i> <%= @event.date.strftime("%B %d, %Y") %> | <i class="icon-time"></i> <%= @event.start_time.strftime("%l:%M%p").downcase %> until <%= @event.end_time.strftime("%l:%M%p").downcase %>
@@ -18,4 +27,11 @@
 
 	<%= link_to 'Edit', edit_event_path(@event) %> |
 	<%= link_to 'Back', events_path %>
+	
+	<% if current_user.try(:admin) %>
+		<h3> People that have RSVPed </h3>
+		<% @event.user_rsvps.each do |u| %>
+			<%= link_to u.full_name, profile_path(u) %>
+		<% end %>
+	<% end %>
 </div>

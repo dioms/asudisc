@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
 
+  before_filter :authenticate_user!, only: [:rsvp]
   before_filter :authenticate_admin!, :except => [:index, :show, :calendar]
 
   # GET /events
@@ -23,6 +24,30 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @event }
+    end
+  end
+
+  def rsvp
+    @event = Event.find(params[:id])
+    respond_to do |format|
+      if @event.user_rsvps.include? current_user 
+        format.html { redirect_to events_path, alert: "You have already RSVPed" }
+      elsif @event.user_rsvps << current_user
+        format.html { redirect_to events_path, notice: "Your RSVP has been submitted"}
+      else
+        format.html { redirect_to events_path, notice: "There was an error processing your RSVP"}
+      end
+    end
+  end
+
+  def remove_rsvp
+    @event = Event.find(params[:id])
+    respond_to do |format|
+      if (@event.user_rsvps.include?(current_user) && @event.user_rsvps.delete(current_user))
+        format.html { redirect_to events_path, notice: "Your RSVP has been removed" }
+      else
+        format.html { redirect_to events_path, alert: "No RSVP found" }
+      end
     end
   end
 

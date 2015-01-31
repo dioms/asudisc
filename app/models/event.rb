@@ -1,6 +1,9 @@
 class Event < ActiveRecord::Base
 
+  has_many :rsvps
+  has_many :user_rsvps, through: :rsvps, source: :user
   has_and_belongs_to_many :users
+
 
   validates :title, :start_time, :date, :description, :location,  :presence => true
 

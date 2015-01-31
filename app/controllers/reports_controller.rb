@@ -8,6 +8,10 @@ class ReportsController < ApplicationController
     @events = Event.order('date DESC')
   end
 
+  def rsvp_report
+    @events = Event.order('date DESC')
+  end
+
   def recently_registered
     @recently_registered = User.order('created_at DESC')
   end
