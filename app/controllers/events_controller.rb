@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   before_filter :authenticate_user!, only: [:rsvp]
-  before_filter :authenticate_admin!, :except => [:index, :show, :calendar]
+  before_filter :authenticate_admin!, :except => [:index, :show, :calendar, :rsvp, :remove_rsvp]
 
   # GET /events
   # GET /events.json
