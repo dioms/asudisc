@@ -29,9 +29,9 @@
 	<%= link_to 'Back', events_path %>
 	
 	<% if current_user.try(:admin) %>
-		<h3> People that have RSVPed </h3>
+		<h3> People that have RSVPed <small> <%= @event.user_rsvps.count %> </small> </h3>
 		<% @event.user_rsvps.each do |u| %>
-			<%= link_to u.full_name, profile_path(u) %>
+			<%= link_to u.full_name, profile_path(u) %> <br />
 		<% end %>
 	<% end %>
 </div>
