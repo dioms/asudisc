@@ -1,4 +1,4 @@
-class PaymentNotification < ActiveRecord::Base
+class Payment < ActiveRecord::Base
   attr_accessible :params, :status, :transaction_id, :user_id
   belongs_to :cart
   serialize :params
