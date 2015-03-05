@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include Semesters
   mount_uploader :resume, ResumeUploader
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -8,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :blog_posts
   has_many :rsvps
   has_many :payments
+  serialize :paid, Array
   has_many :event_rsvps, through: :rsvps, source: :event
   has_and_belongs_to_many :events
 
@@ -46,6 +48,10 @@ class User < ActiveRecord::Base
   def self.find_by_full_name(name)
     first, last = name.split(" ")
     all.select { |u| u.first_name.downcase == first.downcase && u.last_name.downcase == last.downcase }
+  end
+
+  def currently_paid
+    paid.includes?(current_semester)
   end
 
 end
