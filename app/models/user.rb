@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :admin, :first_name, :last_name,
-                  :graduation, :has_paid, :resume, :name_tag, :ok_name, :shirt_size, :gender
+                  :graduation, :has_paid, :resume, :name_tag, :ok_name, :shirt_size, :gender, :paid
 
   validates_uniqueness_of :email
   validates_format_of :email, :with => /\A([^@\s]+)@((?:asu+\.)+edu)\Z/i, :on => :create, :message => "Must be a valid asu email address"
@@ -51,7 +51,9 @@ class User < ActiveRecord::Base
   end
 
   def currently_paid
-    paid.includes?(current_semester)
+    paid_semester = payments.map { |payment| date_to_semester(payment.payment_end) }
+    paid_semester.include?(current_semester) || paid_semester.include?(next_semester)
   end
+
 
 end

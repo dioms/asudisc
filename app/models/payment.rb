@@ -6,12 +6,15 @@ class Payment < ActiveRecord::Base
   serialize :params
   after_create :add_paid_semesters_to_user
 
-  private
-    def add_paid_semesters_to_user
-        paid_semesters = [current_semester]
-        paid_semesters << next_semester if price == 50
-        u = User.find(user_id)
-        u.update_attributes(paid: paid_semesters)
-        u.save!
-    end
+  def add_paid_semesters_to_user
+      paid_semesters = [current_semester]
+      paid_semesters << next_semester if price == 50
+      u = User.find(user_id)
+      u.update_attributes(paid: paid_semesters)
+      u.save!
+  end
+
+  def payment_end
+    price == 50.0 ? created_at + 6.months : created_at
+  end
 end

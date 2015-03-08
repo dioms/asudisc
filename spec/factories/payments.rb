@@ -14,4 +14,8 @@ FactoryGirl.define do
     f.status 'Failed'
   end
 
+  factory :year_payment, parent: :payment do |f|
+    f.price 50.0
+  end
+
 end
