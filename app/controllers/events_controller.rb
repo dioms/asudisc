@@ -1,14 +1,14 @@
 class EventsController < ApplicationController
-
   before_filter :authenticate_user!, only: [:rsvp]
-  before_filter :authenticate_admin!, :except => [:index, :show, :calendar, :rsvp, :remove_rsvp]
+  before_filter :authenticate_admin!, except: [:index, :show, :calendar, :rsvp,
+                                               :remove_rsvp]
 
   # GET /events
   # GET /events.json
   def index
-    @published_events = Event.where("status = :status AND date >= :date",
-                                    {status: "Publish", date: 1.day.ago})
-    @draft_events = Event.where(status: "Draft")
+    @published_events = Event.where('status = :status AND date >= :date',
+                                    status: 'Publish', date: 1.day.ago)
+    @draft_events = Event.where(status: 'Draft')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -30,12 +30,15 @@ class EventsController < ApplicationController
   def rsvp
     @event = Event.find(params[:id])
     respond_to do |format|
-      if @event.user_rsvps.include? current_user 
-        format.html { redirect_to events_path, alert: "You have already RSVPed" }
+      if @event.user_rsvps.include? current_user
+        format.html { redirect_to events_path, alert: 
+                      'You have already RSVPed' }
       elsif @event.user_rsvps << current_user
-        format.html { redirect_to events_path, notice: "Your RSVP has been submitted"}
+        format.html { redirect_to events_path, notice: 
+                      'Your RSVP has been submitted' }
       else
-        format.html { redirect_to events_path, notice: "There was an error processing your RSVP"}
+        format.html { redirect_to events_path, notice: 
+                      'There was an error processing your RSVP' }
       end
     end
   end
@@ -43,10 +46,13 @@ class EventsController < ApplicationController
   def remove_rsvp
     @event = Event.find(params[:id])
     respond_to do |format|
-      if (@event.user_rsvps.include?(current_user) && @event.user_rsvps.delete(current_user))
-        format.html { redirect_to events_path, notice: "Your RSVP has been removed" }
+      if (@event.user_rsvps.include?(current_user) && 
+          @event.user_rsvps.delete(current_user))
+        format.html { redirect_to events_path, notice: 
+                      'Your RSVP has been removed' }
       else
-        format.html { redirect_to events_path, alert: "No RSVP found" }
+        format.html { redirect_to events_path, alert: 
+                      'No RSVP found' }
       end
     end
   end
@@ -54,17 +60,20 @@ class EventsController < ApplicationController
   # This page actually saves the attendance to the database
   def attendance
     @event = Event.find(params[:id])
-    #@user = User.find_by_email(params[:email])
-    @user = User.first(conditions: [ "lower(email) = ?", params[:email].downcase])
+    @user = User.first(conditions: ["lower(email) = ?",
+                                    params[:email].downcase])
 
     respond_to do |format|
       if @user.nil?
-        format.html { redirect_to attend_event_path(@event), alert: 'No user could be found with this email.' }
+        format.html { redirect_to attend_event_path(@event), alert:
+                      'No user could be found with this email.' }
       elsif @event.users.include? @user
-        format.html { redirect_to attend_event_path(@event), alert: 'Your attendance has already been tracked for this event.' }
+        format.html { redirect_to attend_event_path(@event), alert:
+                      'Your attendance has already been tracked for this event.' }
       else
         @user.attend(@event)
-        format.html { redirect_to attend_event_path(@event), notice: 'Your attendance was successfully submitted.' }
+        format.html { redirect_to attend_event_path(@event), notice:
+                      'Your attendance was successfully submitted.' }
       end
     end
   end
@@ -135,6 +144,6 @@ class EventsController < ApplicationController
   end
 
   def calendar
-    @events = Event.where("status = :status", {status: "Publish"})
+    @events = Event.where("status = :status", {status: 'Publish'})
   end
 end
