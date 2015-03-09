@@ -15,7 +15,7 @@
           <% @users.each do |u| %>
             <tr>
               <td><%= image_tag 'anonymous-icon.jpg' %></td>
-              <td><%= link_to(u.full_name.titleize, profile_path(u)) %> <%= '<i class="icon-star" style="color: #e3cf7a"></i>'.html_safe if u.has_paid %>
+              <td><%= link_to(u.full_name.titleize, profile_path(u)) %> <%= '<i class="icon-star" style="color: #e3cf7a"></i>'.html_safe if u.currently_paid %>
               <td><%= link_to("Resume", u.resume.url , :class => "btn btn-primary", :target => "_blank") if (current_user == u || current_user.try(:admin?)) && u.resume.url.present? %>
               <%= link_to("Make Admin", make_admin_path(u) , :class => "btn btn-primary") if current_user.try(:admin?) && !u.admin %></td>
               <td><%= u.graduation %></td>

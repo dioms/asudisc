@@ -1,7 +1,7 @@
 class ReportsController < ApplicationController
   before_filter :authenticate_admin!
   def dues_report
-    @paying_members = User.where(has_paid: true)
+    @paying_members = User.where(currently_paid: true)
   end
 
   def attendance_report

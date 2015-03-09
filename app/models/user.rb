@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
     all.select { |u| u.first_name.downcase == first.downcase && u.last_name.downcase == last.downcase }
   end
 
-  def currently_paid
+  def currently_paid?
     paid_semester = payments.map { |payment| date_to_semester(payment.payment_end) }
     paid_semester.include?(current_semester) || paid_semester.include?(next_semester)
   end

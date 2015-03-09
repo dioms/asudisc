@@ -10,14 +10,14 @@ describe User do
     it 'has paid for current semester' do
       user = FactoryGirl.create(:user)
       payment = FactoryGirl.create(:payment)
-      expect(user.currently_paid).to be true
+      expect(user.currently_paid?).to be true
     end
 
     it 'hasnt paid for next semester' do
       user = FactoryGirl.create(:user)
       payment = FactoryGirl.create(:payment)
       Timecop.freeze(Date.today + 6.months) do
-        expect(user.currently_paid).to be false
+        expect(user.currently_paid?).to be false
       end
     end
   end
@@ -27,14 +27,14 @@ describe User do
     it 'has paid for current semester' do
       user = FactoryGirl.create(:user)
       payment = FactoryGirl.create(:year_payment)
-      expect(user.currently_paid).to be true
+      expect(user.currently_paid?).to be true
     end
 
     it 'has paid for next semester' do
       user = FactoryGirl.create(:user)
       payment = FactoryGirl.create(:year_payment)
       Timecop.freeze(Date.today + 6.months) do
-        expect(user.currently_paid).to be true
+        expect(user.currently_paid?).to be true
       end
     end
 
@@ -42,7 +42,7 @@ describe User do
       user = FactoryGirl.create(:user)
       payment = FactoryGirl.create(:year_payment)
       Timecop.freeze(Date.today + 12.months) do
-        expect(user.currently_paid).to be false
+        expect(user.currently_paid?).to be false
       end
     end
   end

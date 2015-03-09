@@ -3,7 +3,7 @@
     <div class="span12 offset1">
       <h1> <%= "Welcome" if current_user == @user %>
         <%= @user.first_name %>
-        <% if current_user.has_paid? %>
+        <% if current_user.currently_paid? %>
           <i class="icon-star" style="color: #e3cf7a"></i>
         <% else %>
           <%= link_to("Pay Dues", dues_path, :class => "btn btn-success") if current_user == @user %> <% end %>
