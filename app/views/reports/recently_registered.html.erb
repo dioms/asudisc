@@ -6,7 +6,7 @@
       <small> 
         <%= u.created_at.strftime("%b %e - %Y") %> -
         <%= u.graduation %>  -
-        <%= u.currently_paid ? "Paid" : "Not-Paid" %>
+        <%= u.currently_paid? ? "Paid" : "Not-Paid" %>
       </small>
     </h4>
   <% end %>
