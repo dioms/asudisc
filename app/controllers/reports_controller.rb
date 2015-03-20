@@ -1,7 +1,8 @@
 class ReportsController < ApplicationController
   before_filter :authenticate_admin!
   def dues_report
-    @paying_members = User.select { |u| u.currently_paid? }
+    @paying_members = User.select { |u| u.currently_paid? } | 
+      User.where(has_paid: true).where("created_at >= ?", Time.now.ago(8.months))
   end
 
   def attendance_report
