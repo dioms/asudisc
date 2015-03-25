@@ -3,6 +3,7 @@ Asudisc::Application.routes.draw do
   get "reports/attendance_report"
   get "reports/recently_registered"
   get "reports/rsvp_report"
+  get "reports/all_report"
   match "/reports", :to => 'reports#index'
 
   resources :blog_posts

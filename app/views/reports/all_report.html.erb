@@ -1,0 +1,8 @@
+<div class="container">
+  <h2>All Registered Members</h2>
+  <% @users.each do |u| %>
+    <h4>
+      <%= link_to u.full_name, profile_path(u) %>, <%= u.email %>
+    </h4>
+  <% end %>
+</div>

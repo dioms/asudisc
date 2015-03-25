@@ -19,4 +19,8 @@ class ReportsController < ApplicationController
 
   def index
   end
+
+  def all_report
+    @users = User.all
+  end
 end
