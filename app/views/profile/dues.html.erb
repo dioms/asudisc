@@ -10,8 +10,8 @@
                                         <div class="wrapper">
                                                 <h3>Pay per Semester</h3>
                                                 <div class="price">
-                                                        <span class="dollar">$</span> 
-                                                        <span class="qty">30</span> 
+                                                        <span class="dollar">$</span>
+                                                        <span class="qty">30</span>
                                                         <span class="month">/semester</span>
                                                 </div>
                                                 <div class="features">
@@ -23,7 +23,7 @@
                                                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                                   <input type="hidden" name="cmd" value="_s-xclick">
                                                   <input type="hidden" name="custom" value="<%= current_user.id %>">
-                                                  <input type="hidden" name="invoice" value="<%= current_user.id + 3000 %>">
+                                                  <input type="hidden" name="invoice" value="<%= current_user.id + 4000 %>">
                                                   <input type="hidden" name="hosted_button_id" value="TY6HJJL6KZGBA">
                                                   <input name="notify_url" value="http://asudisc.org/payment_notification" type="hidden">
                                                   <a class="order" href="#" onclick="$(this).closest('form').submit()">ORDER NOW</a>
@@ -37,8 +37,8 @@
                                         <div class="wrapper">
                                                 <h3>Pay per Year</h3>
                                                 <div class="price">
-                                                        <span class="dollar">$</span> 
-                                                        <span class="qty">25</span> 
+                                                        <span class="dollar">$</span>
+                                                        <span class="qty">25</span>
                                                         <span class="month">/semester</span>
                                                 </div>
                                                 <div class="features">
@@ -50,9 +50,9 @@
                                                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                                                         <input type="hidden" name="cmd" value="_s-xclick">
                                                         <input type="hidden" name="custom" value="<%= current_user.id %>">
-                                                        <input type="hidden" name="invoice" value="<%= current_user.id + 2000 %>">
+                                                        <input type="hidden" name="invoice" value="<%= current_user.id + 5000 %>">
                                                         <input type="hidden" name="hosted_button_id" value="FKK75L7UAMXW4">
-                        <input name="notify_url" value="http://asudisc.org/payment_notification" type="hidden">
+                                                        <input name="notify_url" value="http://asudisc.org/payment_notification" type="hidden">
                                                         <a class="order" href="#" onclick="$(this).closest('form').submit()">ORDER NOW</a>
                                                         <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                                                 </form>
