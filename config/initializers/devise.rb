@@ -5,6 +5,10 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
   config.mailer_sender = "pwreset@asudisc.org"
+  
+  # config secret key
+  config.secret_key = '46a8a008507d8c995c0487c0b2a2212dbb4244270e19df073941511456b84e
+b952f7421b45f0c5cc82675af84efec28ccd7c24c9cf7b2b572222de6b50acbd21'  
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
