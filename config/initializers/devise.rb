@@ -7,8 +7,7 @@ Devise.setup do |config|
   config.mailer_sender = "pwreset@asudisc.org"
   
   # config secret key
-  config.secret_key = '46a8a008507d8c995c0487c0b2a2212dbb4244270e19df073941511456b84e
-b952f7421b45f0c5cc82675af84efec28ccd7c24c9cf7b2b572222de6b50acbd21'  
+  config.secret_key = ENV["DEVISE_SECRET"]
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
