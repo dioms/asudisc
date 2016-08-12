@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(:version => 20150305031925) do
     t.text     "company_description"
     t.datetime "created_at",                                    :null => false
     t.datetime "updated_at",                                    :null => false
-    t.date     "end_date",            :default => '2015-10-21'
+    t.date     "end_date",            :default => '2016-10-06'
   end
 
   create_table "notifications", :force => true do |t|

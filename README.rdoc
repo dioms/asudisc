@@ -1,1 +1,17 @@
 Source code for asudisc.org website
+
+This is the source code for the asudisc.org website for ASU’s Department of Information Systems Club. Please read (and contribute) to this readme if you would to be a contributor in helping make the website better. The goal of the readme is to setup your local environment to be able to use this website that is built on Ruby on Rails. The website can always have new features to just look better each year, just be blessed that the database portion of the website has already been done (thanks to Diego), so mainly contributions that are needed will be front-end work.
+
+What you need to have and learn (Please make sure to check this off)
+
+- any working computer (Windows/Mac/Linux)
+- a text editor/IDE. Notepad++, Atom, and Visual Studio Code are great free text editors to get started.
+- Ruby on Rails is a bit more advance than what you learned in CIS 425, so this is good practice to just learn and mess around with this website. Check out Ruby on Rails main website’s tutorial or this free e-book to read online
+- how to maneuver around a terminal (go and take Professor Mazzolla’s CIS class about UNIX!)
+- Ruby on Rails components. Go to http://railsinstaller.org/en to download the package which will quickly make your computer able to do this website properly
+- KNOW GITHUB, GIT, and Version control. nothing special, just the basics. You can learn any of these things for free on Github, Youtube, Udacity, etc. Git is usually done on the terminal which is included on Mac/Linux machines and you probably need to download Putty for Windows. Some IDE’s have it included #blessed. There is also Github Desktop which is great if you want to work with a GUI
+    - push and pull requests
+    - understanding when to fork and when to branch
+    - Quick Example:
+        - basically if you want to make your own website but use this website as your base? Branch
+        - if you are assigned or want to work on a specific feature to enhance the current website? Fork

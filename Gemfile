@@ -23,12 +23,13 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3', '>= 1.3.11'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'pry-rails'
   gem 'timecop'
+  gem 'json', '~> 2.0', '>= 2.0.2'
 end
 
 group :production do
